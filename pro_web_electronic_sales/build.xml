@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="pro_web_electronic_sales" default="default" basedir=".">
-    <description>Builds, tests, and runs the project pro_web_electronic_sales.</description>
+<project name="pro_web_electronics_sale" default="default" basedir=".">
+    <description>Builds, tests, and runs the project pro_web_electronics_sale.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
