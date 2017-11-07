@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 7, 2017 10:33:37 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Chitiethd" table="chitiethd" catalog="web_electronic_sales" optimistic-lock="version">
+        <id name="maCt" type="int">
+            <column name="ma_ct" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="donhang" class="entities.Donhang" fetch="select">
+            <column name="ma_dh" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sanpham" class="entities.Sanpham" fetch="select">
+            <column name="ma_sp" not-null="true" />
+        </many-to-one>
+        <property name="soluong" type="java.lang.Integer">
+            <column name="soluong" />
+        </property>
+        <property name="tongtien" type="java.lang.Float">
+            <column name="tongtien" precision="12" scale="0" />
+        </property>
+        <property name="thanhtien" type="java.lang.Float">
+            <column name="thanhtien" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 7, 2017 10:33:37 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entities.Sanpham" table="sanpham" catalog="web_electronic_sales" optimistic-lock="version">
+        <id name="maSp" type="int">
+            <column name="ma_sp" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="danhmuc" class="entities.Danhmuc" fetch="select">
+            <column name="ma_dm" />
+        </many-to-one>
+        <many-to-one name="nhacungcap" class="entities.Nhacungcap" fetch="select">
+            <column name="ma_ncc" />
+        </many-to-one>
+        <many-to-one name="trangthai" class="entities.Trangthai" fetch="select">
+            <column name="ma_tt" />
+        </many-to-one>
+        <property name="tensanpham" type="string">
+            <column name="tensanpham" length="100" />
+        </property>
+        <property name="mota" type="string">
+            <column name="mota" length="1000" />
+        </property>
+        <property name="anh" type="string">
+            <column name="anh" length="200" />
+        </property>
+        <property name="gia" type="java.lang.Float">
+            <column name="gia" precision="12" scale="0" />
+        </property>
+        <property name="sale" type="java.lang.Float">
+            <column name="sale" precision="12" scale="0" />
+        </property>
+        <property name="soluong" type="java.lang.Integer">
+            <column name="soluong" />
+        </property>
+        <set name="chitiethds" table="chitiethd" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ma_sp" not-null="true" />
+            </key>
+            <one-to-many class="entities.Chitiethd" />
+        </set>
+    </class>
+</hibernate-mapping>
