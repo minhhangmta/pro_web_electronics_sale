@@ -5,13 +5,13 @@
  */
 package service.impl;
 
-import dao.impl.ListProductDaoImpl;
+import dao.impl.CategoryDaoImpl;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pojo.Danhmuc;
-import service.ListProductService;
+import service.CategoryService;
 
 /**
  *
@@ -19,12 +19,12 @@ import service.ListProductService;
  */
 @Service 
 @Transactional
-public class ListProductServiceImpl implements ListProductService {
+public class CategoryServiceImpl implements CategoryService {
 
     @Override
     
-    public List<Danhmuc> getListDanhMuc() {
-        return new ListProductDaoImpl().getListDanhMuc();
+    public List<Danhmuc> getListCategory() {
+        return new CategoryDaoImpl().getListCategory();
     }
 
 }

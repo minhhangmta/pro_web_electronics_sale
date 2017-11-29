@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <div>
-    <c:forEach var="item" items="${danhsachsanpham}">
+    <c:forEach var="item" items="${listProduct}">
         <div class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_mobiles">
             <div class="agile_ecommerce_tab_left mobiles_grid">
                 <div class="hs-wrapper hs-wrapper2">

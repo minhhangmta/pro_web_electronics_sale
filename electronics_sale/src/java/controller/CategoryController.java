@@ -11,29 +11,29 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import service.impl.ListProductServiceImpl;
-import service.ListProductService;
-
-
-
+import service.impl.*;
+import service.*;
 
 /**
  *
  * @author tranv
  */
-
 @Controller
 @Configuration
 @ComponentScan("service.impl")
 
-public class ListProductController/** implements Controller*/{
-//    @Autowired
-//    DanhMucService danhmucService;
-//    
-//    @RequestMapping("/category")
-//    public String category(ModelMap mm){
-//        mm.put("listDanhMuc",danhmucService.getListDanhMuc());
-//        return "category";
-//    }
-    
+public class CategoryController/**
+ * implements Controller
+ */
+{
+
+    @Autowired
+    CategoryService categoryService;
+
+    @RequestMapping("/category")
+    public String category(ModelMap mm) {
+        mm.put("listCategory", categoryService.getListCategory());
+        return "category";
+    }
+
 }
