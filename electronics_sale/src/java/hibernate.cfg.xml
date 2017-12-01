@@ -46,15 +46,15 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/web_electronic_sales</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">Vietchucmta</property>
-    <mapping resource="pojo/Donhang.hbm.xml"/>
-    <mapping resource="pojo/Trangthai.hbm.xml"/>
-    <mapping resource="pojo/Khachhang.hbm.xml"/>
     <mapping resource="pojo/Chitiethd.hbm.xml"/>
-    <mapping resource="pojo/Lienhe.hbm.xml"/>
-    <mapping resource="pojo/Quyen.hbm.xml"/>
     <mapping resource="pojo/Danhmuc.hbm.xml"/>
     <mapping resource="pojo/Sanpham.hbm.xml"/>
     <mapping resource="pojo/Taikhoan.hbm.xml"/>
+    <mapping resource="pojo/Trangthai.hbm.xml"/>
+    <mapping resource="pojo/Donhang.hbm.xml"/>
+    <mapping resource="pojo/Lienhe.hbm.xml"/>
+    <mapping resource="pojo/Khachhang.hbm.xml"/>
     <mapping resource="pojo/Nhacungcap.hbm.xml"/>
+    <mapping resource="pojo/Quyen.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

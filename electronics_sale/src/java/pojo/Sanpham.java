@@ -1,5 +1,5 @@
 package pojo;
-// Generated Nov 29, 2017 9:53:13 AM by Hibernate Tools 4.3.1
+// Generated Dec 2, 2017 3:44:02 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Sanpham  implements java.io.Serializable {
 
 
-     private int maSp;
+     private Integer maSp;
      private Danhmuc danhmuc;
      private Nhacungcap nhacungcap;
      private Trangthai trangthai;
@@ -26,12 +26,7 @@ public class Sanpham  implements java.io.Serializable {
     public Sanpham() {
     }
 
-	
-    public Sanpham(int maSp) {
-        this.maSp = maSp;
-    }
-    public Sanpham(int maSp, Danhmuc danhmuc, Nhacungcap nhacungcap, Trangthai trangthai, String tensanpham, String mota, String anh, Float gia, Float sale, Integer soluong, Set chitiethds) {
-       this.maSp = maSp;
+    public Sanpham(Danhmuc danhmuc, Nhacungcap nhacungcap, Trangthai trangthai, String tensanpham, String mota, String anh, Float gia, Float sale, Integer soluong, Set chitiethds) {
        this.danhmuc = danhmuc;
        this.nhacungcap = nhacungcap;
        this.trangthai = trangthai;
@@ -44,11 +39,11 @@ public class Sanpham  implements java.io.Serializable {
        this.chitiethds = chitiethds;
     }
    
-    public int getMaSp() {
+    public Integer getMaSp() {
         return this.maSp;
     }
     
-    public void setMaSp(int maSp) {
+    public void setMaSp(Integer maSp) {
         this.maSp = maSp;
     }
     public Danhmuc getDanhmuc() {

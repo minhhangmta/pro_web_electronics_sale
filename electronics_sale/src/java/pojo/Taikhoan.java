@@ -1,5 +1,5 @@
 package pojo;
-// Generated Nov 29, 2017 9:53:13 AM by Hibernate Tools 4.3.1
+// Generated Dec 2, 2017 3:44:02 AM by Hibernate Tools 4.3.1
 
 
 
@@ -9,7 +9,7 @@ package pojo;
 public class Taikhoan  implements java.io.Serializable {
 
 
-     private int maTk;
+     private Integer maTk;
      private Quyen quyen;
      private String username;
      private String password;
@@ -17,22 +17,17 @@ public class Taikhoan  implements java.io.Serializable {
      private String email;
      private String sodienthoai;
      private String diachi;
-     private Boolean trangthai;
+     private Integer maTt;
 
     public Taikhoan() {
     }
-     public Taikhoan( String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+
 	
-    public Taikhoan(int maTk, String username, String password) {
-        this.maTk = maTk;
+    public Taikhoan(String username, String password) {
         this.username = username;
         this.password = password;
     }
-    public Taikhoan(int maTk, Quyen quyen, String username, String password, String hoten, String email, String sodienthoai, String diachi, Boolean trangthai) {
-       this.maTk = maTk;
+    public Taikhoan(Quyen quyen, String username, String password, String hoten, String email, String sodienthoai, String diachi, Integer maTt) {
        this.quyen = quyen;
        this.username = username;
        this.password = password;
@@ -40,14 +35,14 @@ public class Taikhoan  implements java.io.Serializable {
        this.email = email;
        this.sodienthoai = sodienthoai;
        this.diachi = diachi;
-       this.trangthai = trangthai;
+       this.maTt = maTt;
     }
    
-    public int getMaTk() {
+    public Integer getMaTk() {
         return this.maTk;
     }
     
-    public void setMaTk(int maTk) {
+    public void setMaTk(Integer maTk) {
         this.maTk = maTk;
     }
     public Quyen getQuyen() {
@@ -99,12 +94,12 @@ public class Taikhoan  implements java.io.Serializable {
     public void setDiachi(String diachi) {
         this.diachi = diachi;
     }
-    public Boolean getTrangthai() {
-        return this.trangthai;
+    public Integer getMaTt() {
+        return this.maTt;
     }
     
-    public void setTrangthai(Boolean trangthai) {
-        this.trangthai = trangthai;
+    public void setMaTt(Integer maTt) {
+        this.maTt = maTt;
     }
 
 

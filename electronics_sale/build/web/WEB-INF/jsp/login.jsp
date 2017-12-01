@@ -31,9 +31,11 @@
                                                 <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>Sign in</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
                                                     <div class="facts">
                                                         <div class="register">
-                                                        <form:form action="${pageContext.request.contextPath}/Loginn" method="POST" commandName="taikhoan">			
-                                                            <form:input path="username" name="username" placeholder="Email Address" type="text" required="" />						
-                                                            <form:input path="password" name="password" placeholder="Password" type="password" required=""/>										
+                                                            
+                                                            <p>${msg}</p>
+                                                        <form:form action="${pageContext.request.contextPath}/Login" method="POST" commandName="taikhoan">			
+                                                            <form:input path="username" placeholder="Email Address" type="text" required="" /><p>${msguser}</p>						
+                                                            <form:input path="password"  placeholder="Password" type="password" required=""/>										
                                                                 <div class="sign-up">
                                                                     <input type="submit" value="Sign in">
                                                                 </div>

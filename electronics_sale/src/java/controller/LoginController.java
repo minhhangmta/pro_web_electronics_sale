@@ -31,22 +31,28 @@ public class LoginController {
     @Autowired
     private AccountService accountService;
 
-    @RequestMapping(value = "/Login")
+    @RequestMapping(value = "/Login",method=RequestMethod.GET)
     public String insert(ModelMap mm) {
         mm.put("taikhoan", new Taikhoan());
         return "login";
     }
 
-    @RequestMapping(value = "/Loginn", method = RequestMethod.POST)
+    @RequestMapping(value = "/Login", method = RequestMethod.POST)
     public String login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("taikhoan") Taikhoan t, ModelMap mm) {
         Taikhoan tk = accountService.login(t.getUsername(), t.getPassword());
         if (tk != null) {
             HttpSession session = request.getSession();
             session.setAttribute("account", tk);
             return "index";
-        } else {
+        }
+        else {
             mm.put("msg", "Incorrect email or password!");
             return "login";
         }
+    }
+    @RequestMapping(value = "/Logout",method=RequestMethod.GET)
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:Login";
     }
 }
