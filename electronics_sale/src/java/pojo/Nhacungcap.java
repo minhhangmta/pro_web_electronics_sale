@@ -16,16 +16,26 @@ public class Nhacungcap  implements java.io.Serializable {
      private String email;
      private String sodienthoai;
      private String diachi;
+     private String anh;
+
+    public String getAnh() {
+        return anh;
+    }
+
+    public void setAnh(String anh) {
+        this.anh = anh;
+    }
      private Set sanphams = new HashSet(0);
 
     public Nhacungcap() {
     }
 
-    public Nhacungcap(String tennhacc, String email, String sodienthoai, String diachi, Set sanphams) {
+    public Nhacungcap(String tennhacc, String email, String sodienthoai, String diachi,String anh, Set sanphams) {
        this.tennhacc = tennhacc;
        this.email = email;
        this.sodienthoai = sodienthoai;
        this.diachi = diachi;
+       this.anh=anh;
        this.sanphams = sanphams;
     }
    

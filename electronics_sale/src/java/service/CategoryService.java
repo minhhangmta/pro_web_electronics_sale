@@ -3,19 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package service;
 
 import java.util.List;
-import javax.transaction.Transactional;
 import pojo.Danhmuc;
 
 /**
  *
  * @author tranv
  */
-public interface ListProductDao {
-
-    @Transactional
+public interface CategoryService {
     public List<Danhmuc> getListDanhMuc();
-    
 }

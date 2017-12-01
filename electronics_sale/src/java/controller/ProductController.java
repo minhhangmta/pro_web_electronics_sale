@@ -25,19 +25,19 @@ import service.ProductService;
 @ComponentScan("service.impl")
 
 public class ProductController {
-//
-//    @Autowired
-//    SanPhamService sanPhamService;
-//    
-//    @RequestMapping("/product-list")
-//    public String dssanpham(ModelMap mm){
-//        mm.put("danhsachsanpham",sanPhamService.getListSanPham());
-//        return "product-list";
-//    }
-//    
-//    @RequestMapping("/product")
-//    public String ListProductByCategoryID(ModelMap mm,@RequestParam int categoryID){
-//        mm.put("danhsachsanpham",sanPhamService.getListProductByCategoryID(categoryID));
-//        return "product";
-//    }
+
+    @Autowired
+    ProductService productService;
+    
+    @RequestMapping("/product-list")
+    public String dssanpham(ModelMap mm){
+        mm.put("danhsachsanpham",productService.getListSanPham());
+        return "product-list";
+    }
+    
+    @RequestMapping("/productbycate")
+    public String ListProductByCategoryID(ModelMap mm,@RequestParam int categoryID){
+        mm.put("danhsachsanpham",productService.getListProductByCategoryID(categoryID));
+        return "product";
+    }
 }

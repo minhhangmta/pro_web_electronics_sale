@@ -20,6 +20,9 @@
         <property name="diachi" type="string">
             <column name="diachi" length="200" />
         </property>
+        <property name="anh" type="string">
+            <column name="anh" length="100" />
+        </property>
         <set name="sanphams" table="sanpham" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="ma_ncc" />

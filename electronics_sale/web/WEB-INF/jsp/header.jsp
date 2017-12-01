@@ -21,8 +21,8 @@
         <link href="<c:url value="/resources/css/font-awesome.css"/>" rel="stylesheet"> 
         <!-- //font-awesome icons -->
         <!-- js -->
-        <script src="<c:url value="/resources/js/jquery.min.js"/>"></script>
-        <link rel="stylesheet" href="<c:url value="/resorces/css/jquery.countdown.css"/>" /> <!-- countdown --> 
+        <script src="<c:url value="/resources/js/jquery-3.2.1.min.js"/>"type="text/javascript"></script>
+        <link href="stylesheet" href="<c:url value="/resorces/css/jquery.countdown.css"/>" /> <!-- countdown --> 
         <!-- //js -->  
         <!-- web fonts --> 
         <link href='//fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
@@ -47,7 +47,7 @@
         <div class="header" id="home1">
             <div class="container">
                 <div class="w3l_login">
-                    <a href="#" data-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                    <a href="${pageContext.request.contextPath}/Login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
                 </div>
                 <div class="w3l_logo">
                     <h1><a href="${pageContext.request.contextPath}/index">Electronic Store<span>Your stores. Your place.</span></a></h1>

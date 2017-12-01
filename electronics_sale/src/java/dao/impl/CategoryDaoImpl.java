@@ -15,13 +15,13 @@ import org.springframework.orm.hibernate3.HibernateJdbcException;
 import org.springframework.stereotype.Repository;
 import pojo.Danhmuc;
 import util.HibernateUtil;
-import dao.ListProductDao;
+import dao.CategoryDao;
 /**
  *
  * @author tranv
  */
 @Repository
-public class ListProductDaoImpl implements ListProductDao{
+public class CategoryDaoImpl implements CategoryDao{
     
     @Override
     public List<Danhmuc> getListDanhMuc() {
@@ -40,7 +40,7 @@ public class ListProductDaoImpl implements ListProductDao{
     }
     
 //    public static void main(String[] args) {
-//        List<Danhmuc> list = new DanhMucDaoImpl().getListDanhMuc();
+//        List<Danhmuc> list = new ListProductDaoImpl().getListDanhMuc();
 //        list.forEach((danhmuc) -> {
 //            System.out.println(danhmuc.getTendanhmuc());
 //        });

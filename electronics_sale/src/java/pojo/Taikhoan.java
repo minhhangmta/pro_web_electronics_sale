@@ -21,7 +21,10 @@ public class Taikhoan  implements java.io.Serializable {
 
     public Taikhoan() {
     }
-
+     public Taikhoan( String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 	
     public Taikhoan(int maTk, String username, String password) {
         this.maTk = maTk;

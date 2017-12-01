@@ -28,9 +28,9 @@ public class AccountDaoImpl implements AccountDao{
         Transaction transaction=null;
         try{
             transaction=session.beginTransaction();
-            Query query=session.createQuery("from Taikhoan where username=:userName and password=:passWord");
-            query.setString("userName", userName);
-            query.setString("passWord", passWord);
+            Query query=session.createQuery("from Taikhoan where username=:username and password=:password");
+            query.setString("username", userName);
+            query.setString("password", passWord);
             Taikhoan tk=(Taikhoan) query.uniqueResult();
             transaction.commit();
             return tk;

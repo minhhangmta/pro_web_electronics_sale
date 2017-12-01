@@ -5,13 +5,15 @@
  */
 package service.impl;
 
-import dao.impl.ListProductDaoImpl;
+import dao.CategoryDao;
+import dao.impl.CategoryDaoImpl;
 import java.util.List;
 import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pojo.Danhmuc;
-import service.ListProductService;
+import service.CategoryService;
 
 /**
  *
@@ -19,12 +21,13 @@ import service.ListProductService;
  */
 @Service 
 @Transactional
-public class ListProductServiceImpl implements ListProductService {
-
-    @Override
+public class CategoryServiceImpl implements CategoryService {
+    @Autowired
+    CategoryDao categoryDao;
     
+    @Override    
     public List<Danhmuc> getListDanhMuc() {
-        return new ListProductDaoImpl().getListDanhMuc();
+        return categoryDao.getListDanhMuc();
     }
 
 }
