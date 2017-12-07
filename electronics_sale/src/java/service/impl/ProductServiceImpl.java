@@ -20,8 +20,8 @@ import service.ProductService;
 @Transactional
 public class ProductServiceImpl implements ProductService{
     @Override
-    public List<Sanpham> getListSanPham(){
-        return new ProductDaoImpl().getListSanPham();
+    public List<Sanpham> getListProduct(){
+        return new ProductDaoImpl().getListProduct();
     }
 
     @Override

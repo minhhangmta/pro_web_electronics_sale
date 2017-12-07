@@ -20,8 +20,10 @@ public class IndexController {
     public String index() {
         return "index";
     }
+
     @RequestMapping(value = "/product", method = RequestMethod.GET)
     public String product() {
         return "product";
     }
+
 }
