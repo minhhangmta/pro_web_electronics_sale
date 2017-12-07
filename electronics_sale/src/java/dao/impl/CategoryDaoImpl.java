@@ -16,11 +16,13 @@ import org.springframework.stereotype.Repository;
 import pojo.Danhmuc;
 import util.HibernateUtil;
 import dao.CategoryDao;
+
 /**
  *
  * @author tranv
  */
 @Repository
+
 public class CategoryDaoImpl implements CategoryDao{
     
     @Override
@@ -30,12 +32,14 @@ public class CategoryDaoImpl implements CategoryDao{
             Query query = session.createQuery("from Danhmuc");
             ArrayList<Danhmuc> list = (ArrayList<Danhmuc>) query.list();
             return list;
+
         } catch (HibernateJdbcException ex) {
             ex.printStackTrace();
         } finally {
             session.flush();
             session.close();
         }
+
         return null;
     }
     
@@ -45,5 +49,4 @@ public class CategoryDaoImpl implements CategoryDao{
 //            System.out.println(danhmuc.getTendanhmuc());
 //        });
 //    }
-
 }

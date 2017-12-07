@@ -7,7 +7,7 @@
         <title>category</title>
     </head>
     <body>
-    <c:forEach var="item" items="${listDanhMuc}">
+    <c:forEach var="item" items="${listCategory}">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title asd">

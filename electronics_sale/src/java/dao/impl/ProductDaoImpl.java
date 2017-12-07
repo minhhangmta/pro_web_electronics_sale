@@ -20,43 +20,67 @@ import dao.ProductDao;
  * @author tranv
  */
 @Repository
-public class ProductDaoImpl implements ProductDao{
+public class ProductDaoImpl implements ProductDao {
+
     @Override
-    public List<Sanpham> getListSanPham(){
-        Session session =HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction=null;
-        try{
-            transaction=session.beginTransaction();
-            Query query=session.createQuery("from Sanpham");
-            ArrayList<Sanpham> list=(ArrayList<Sanpham>) query.list();
-            transaction.commit();
-            return list;
-        }
-        catch(Exception ex){
-            if(transaction!=null){
-                transaction.rollback();
-            }
+    public List<Sanpham> getListProduct() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        ArrayList<Sanpham> list = new ArrayList<>();
+        try {
+            Query query = session.createQuery("from Sanpham");
+            list = (ArrayList<Sanpham>) query.list();
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }
-        finally{
+        } finally {
             session.flush();
             session.close();
         }
-        return null;
+        return list;
     }
-    
 
     @Override
     public List<Sanpham> getListProductByCategoryID(int categoryID) {
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        Transaction transaction = null;
+//        try {
+//            transaction = session.beginTransaction();
+//            Query query = (Query) session.createQuery("from Sanpham where ma_dm=:categoryID");
+//            query.setLong("categoryID", categoryID);
+//            ArrayList<Sanpham> list = (ArrayList<Sanpham>) query.list();
+//            transaction.commit();
+//            return list;
+//        } catch (Exception ex) {
+//            if (transaction != null) {
+//                transaction.rollback();
+//            }
+//            ex.printStackTrace();
+//        } finally {
+//            session.flush();
+//            session.close();
+//        }
+        return null;
+    }
+    
+//    public static void main(String[] args) {
+////        List<Sanpham> list = new ProductDaoImpl().getListSanPham();
+////        list.forEach((sp) -> {
+////            System.out.println(sp.getTensanpham());
+////        });
+//            Sanpham sp=new ProductDaoImpl().getDetailProduct(9);
+//            System.out.println(sp.getTensanpham());
+//    }
+
+    @Override
+    public Sanpham getDetailProduct(int id) {
         Session session =HibernateUtil.getSessionFactory().openSession();
         Transaction transaction=null;
         try{
             transaction=session.beginTransaction();
-            Query query=(Query)session.createQuery("from Sanpham where ma_dm=:categoryID");
-            query.setLong("categoryID", categoryID);
-            ArrayList<Sanpham> list=(ArrayList<Sanpham>) query.list();
+            Query query=(Query)session.createQuery("from Sanpham where maSp=:id");
+            query.setLong("id", id);
+            Sanpham sp=(Sanpham) query.uniqueResult();
             transaction.commit();
-            return list;
+            return sp;
         }
         catch(Exception ex){
             if(transaction!=null){
@@ -70,10 +94,4 @@ public class ProductDaoImpl implements ProductDao{
         }
         return null;
     }
-//    public static void main(String[] args) {
-//        List<Sanpham> list = new ProductDaoImpl().getListSanPham();
-//        list.forEach((sp) -> {
-//            System.out.println(sp.getTensanpham());
-//        });
-//    }
 }

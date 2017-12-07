@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <div>
-    <c:forEach var="item" items="${danhsachsanpham}">
+    <c:forEach var="item" items="${listProduct}">
         <div class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_mobiles">
             <div class="agile_ecommerce_tab_left mobiles_grid">
                 <div class="hs-wrapper hs-wrapper2">
@@ -22,13 +22,14 @@
                 <h5><a href="single.html">${item.tensanpham}</a></h5> 
                 <div class="simpleCart_shelfItem">
                     <p><span>$${item.gia}</span> <i class="item_price">$${item.gia-(item.gia*item.sale/100)}</i></p>
-                    <form action="#" method="post">
+<!--                    <form action="#" method="post">
                         <input type="hidden" name="cmd" value="_cart" />
                         <input type="hidden" name="add" value="1" /> 
                         <input type="hidden" name="w3ls_item" value="Asus Laptop" /> 
                         <input type="hidden" name="amount" value="880.00"/>   
                         <button type="submit" class="w3ls-cart">Add to cart</button>
-                    </form>
+                    </form>-->
+                    <a href="${pageContext.request.contextPath}/shopping/cart/${item.maSp}"><button class="w3ls-cart">Add to cart</button></a>
                 </div> 
                 <div class="mobiles_grid_pos">
                     <h6>new</h6>
