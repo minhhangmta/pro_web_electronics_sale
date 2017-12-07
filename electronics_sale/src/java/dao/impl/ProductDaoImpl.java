@@ -36,6 +36,7 @@ public class ProductDaoImpl implements ProductDao {
             session.close();
         }
         return list;
+
     }
 
     @Override
@@ -94,4 +95,6 @@ public class ProductDaoImpl implements ProductDao {
         }
         return null;
     }
+
+    
 }
