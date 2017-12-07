@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import service.impl.ManufactureServiceImpl;
 import service.ManufactureService;
 
 /**
@@ -23,12 +22,12 @@ import service.ManufactureService;
 @ComponentScan("service.impl")
 
 public class ManufactureController {
-//    @Autowired
-//    NhaCungCapService nhaCungCapService;
-//    
-//    @RequestMapping("/manufacture")
-//    public String nhacungcap(ModelMap mm){
-//        mm.put("listnhacungcap",nhaCungCapService.getListNhaCungCap());
-//        return "manufacture";
-//    }
+    @Autowired
+    ManufactureService manufactureService;
+    
+    @RequestMapping("/nhacungcap")
+    public String nhacungcap(ModelMap mm){
+        mm.put("listnhacungcap",manufactureService.getListNhaCungCap());
+        return "manufacture";
+    }
 }

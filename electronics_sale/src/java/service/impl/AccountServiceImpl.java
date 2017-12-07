@@ -20,10 +20,9 @@ import service.AccountService;
 @Transactional
 public class AccountServiceImpl implements AccountService{
     @Autowired
-    private AccountDao taikhoan;
+    private AccountDao account;
     @Override
     public Taikhoan login(String userName, String passWord) {
-           return  taikhoan.login(userName, passWord);
-    }
-    
+           return  account.login(userName, passWord);
+    }    
 }

@@ -22,15 +22,16 @@ import dao.CategoryDao;
  * @author tranv
  */
 @Repository
-public class CategoryDaoImpl implements CategoryDao {
 
+public class CategoryDaoImpl implements CategoryDao{
+    
     @Override
-    public List<Danhmuc> getListCategory() {
+    public List<Danhmuc> getListDanhMuc() {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        ArrayList<Danhmuc> list = new ArrayList<>();
         try {
             Query query = session.createQuery("from Danhmuc");
-            list = (ArrayList<Danhmuc>) query.list();
+            ArrayList<Danhmuc> list = (ArrayList<Danhmuc>) query.list();
+            return list;
 
         } catch (HibernateJdbcException ex) {
             ex.printStackTrace();
@@ -38,11 +39,12 @@ public class CategoryDaoImpl implements CategoryDao {
             session.flush();
             session.close();
         }
-        return list;
-    }
 
+        return null;
+    }
+    
 //    public static void main(String[] args) {
-//        List<Danhmuc> list = new DanhMucDaoImpl().getListDanhMuc();
+//        List<Danhmuc> list = new ListProductDaoImpl().getListDanhMuc();
 //        list.forEach((danhmuc) -> {
 //            System.out.println(danhmuc.getTendanhmuc());
 //        });

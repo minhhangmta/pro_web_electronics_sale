@@ -1,5 +1,5 @@
 package pojo;
-// Generated Nov 29, 2017 9:53:13 AM by Hibernate Tools 4.3.1
+// Generated Dec 2, 2017 3:44:02 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Khachhang  implements java.io.Serializable {
 
 
-     private int maKh;
+     private Integer maKh;
      private String hoten;
      private String email;
      private String password;
@@ -22,12 +22,7 @@ public class Khachhang  implements java.io.Serializable {
     public Khachhang() {
     }
 
-	
-    public Khachhang(int maKh) {
-        this.maKh = maKh;
-    }
-    public Khachhang(int maKh, String hoten, String email, String password, String sodienthoai, String diachi, Set donhangs) {
-       this.maKh = maKh;
+    public Khachhang(String hoten, String email, String password, String sodienthoai, String diachi, Set donhangs) {
        this.hoten = hoten;
        this.email = email;
        this.password = password;
@@ -36,11 +31,11 @@ public class Khachhang  implements java.io.Serializable {
        this.donhangs = donhangs;
     }
    
-    public int getMaKh() {
+    public Integer getMaKh() {
         return this.maKh;
     }
     
-    public void setMaKh(int maKh) {
+    public void setMaKh(Integer maKh) {
         this.maKh = maKh;
     }
     public String getHoten() {

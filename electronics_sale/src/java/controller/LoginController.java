@@ -27,24 +27,32 @@ import service.AccountService;
 @Configuration
 @ComponentScan("service.impl")
 public class LoginController {
-//    @Autowired
-//    private TaiKhoanService taiKhoanService;
-//    
-//    @RequestMapping(value = "/dangnhap", method = RequestMethod.GET)
-//    public String insert(ModelMap mm) {
-//        mm.put("taikhoan", new Taikhoan());
-//        return "dangnhap";
-//    }
-//    @RequestMapping(value = "/login",method = RequestMethod.POST)
-//    public String login(HttpServletRequest request,HttpServletResponse response,@ModelAttribute("taikhoan") Taikhoan t,ModelMap mm){
-//        Taikhoan tk = taiKhoanService.login(t.getUsername(), t.getPassword());
-//    if (tk != null) {
-//        HttpSession session = request.getSession();
-//        session.setAttribute("tk", tk);
-//        return "thanhcong";
-//    } else {
-//        mm.put("msg", "Incorrect email or password!");
-//        return "dangnhap";
-//   }
-//    }
+
+    @Autowired
+    private AccountService accountService;
+
+    @RequestMapping(value = "/Login",method=RequestMethod.GET)
+    public String insert(ModelMap mm) {
+        mm.put("taikhoan", new Taikhoan());
+        return "login";
+    }
+
+    @RequestMapping(value = "/Login", method = RequestMethod.POST)
+    public String login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("taikhoan") Taikhoan t, ModelMap mm) {
+        Taikhoan tk = accountService.login(t.getUsername(), t.getPassword());
+        if (tk != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("account", tk);
+            return "index";
+        }
+        else {
+            mm.put("msg", "Incorrect email or password!");
+            return "login";
+        }
+    }
+    @RequestMapping(value = "/Logout",method=RequestMethod.GET)
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:Login";
+    }
 }

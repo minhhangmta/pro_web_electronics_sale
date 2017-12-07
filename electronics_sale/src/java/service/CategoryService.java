@@ -13,5 +13,5 @@ import pojo.Danhmuc;
  * @author tranv
  */
 public interface CategoryService {
-    public List<Danhmuc> getListCategory();
+    public List<Danhmuc> getListDanhMuc();
 }

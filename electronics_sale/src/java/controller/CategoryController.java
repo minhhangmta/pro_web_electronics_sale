@@ -14,26 +14,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import service.impl.*;
 import service.*;
 
-/**
- *
- * @author tranv
- */
+
 @Controller
 @Configuration
 @ComponentScan("service.impl")
 
-public class CategoryController/**
- * implements Controller
- */
-{
 
+public class CategoryController/** implements Controller*/{
     @Autowired
     CategoryService categoryService;
-
-    @RequestMapping("/category")
-    public String category(ModelMap mm) {
-        mm.put("listCategory", categoryService.getListCategory());
+    
+    @RequestMapping("/Category")
+    public String category(ModelMap mm){
+        mm.put("listDanhMuc",categoryService.getListDanhMuc());
         return "category";
     }
-
+ 
 }

@@ -33,25 +33,27 @@
                                 <h3>Categories</h3>
                                 <div class="w3ls_mobiles_grid_left_grid_sub">
                                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                    <jsp:include page="category.jsp"></jsp:include> 
+
+                                    <jsp:include page="/Category"></jsp:include> 
+                                      
                                     </div>
                                 </div>
                             </div>
-<!--                            <div class="w3ls_mobiles_grid_left_grid">
-                                <h3>Color</h3>
-                                <div class="w3ls_mobiles_grid_left_grid_sub">
-                                    <div class="ecommerce_color">
-                                        <ul>
-                                            <li><a href="#"><i></i> Red(5)</a></li>
-                                            <li><a href="#"><i></i> Brown(2)</a></li>
-                                            <li><a href="#"><i></i> Yellow(3)</a></li>
-                                            <li><a href="#"><i></i> Violet(6)</a></li>
-                                            <li><a href="#"><i></i> Orange(2)</a></li>
-                                            <li><a href="#"><i></i> Blue(1)</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>-->
+                            <!--                            <div class="w3ls_mobiles_grid_left_grid">
+                                                            <h3>Color</h3>
+                                                            <div class="w3ls_mobiles_grid_left_grid_sub">
+                                                                <div class="ecommerce_color">
+                                                                    <ul>
+                                                                        <li><a href="#"><i></i> Red(5)</a></li>
+                                                                        <li><a href="#"><i></i> Brown(2)</a></li>
+                                                                        <li><a href="#"><i></i> Yellow(3)</a></li>
+                                                                        <li><a href="#"><i></i> Violet(6)</a></li>
+                                                                        <li><a href="#"><i></i> Orange(2)</a></li>
+                                                                        <li><a href="#"><i></i> Blue(1)</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>-->
                             <div class="w3ls_mobiles_grid_left_grid">
                                 <h3>Price</h3>
                                 <div class="w3ls_mobiles_grid_left_grid_sub">
@@ -103,7 +105,9 @@
                             <div class="clearfix"> </div>
                         </div>
                         <div class="w3ls_mobiles_grid_right_grid3">                
-                            <jsp:include page="product-list.jsp"></jsp:include>
+
+                            <jsp:include page="/product-list"></jsp:include>
+                          
                                 <div class="clearfix"> </div>
                             </div>
                         </div>
@@ -263,47 +267,14 @@
 
                     });
                 </script>
-                <script src="<c:url value="/resources/js/jquery.flexisel.js"/>" type="text/javascripts"></script>
             </div>
         </div>
         <!-- //Related Products -->
         <!-- top-brands -->
-        <div class="top-brands">
-            <div class="container">
-                <h3>Top Brands</h3>
-                <div class="sliderfig">
-                    <jsp:include page="manufacture.jsp"></jsp:include>
-                    </div>
-                    <script type="text/javascript">
-                            $(window).load(function () {
-                                $("#flexiselDemo1").flexisel({
-                                    visibleItems: 4,
-                                    animationSpeed: 1000,
-                                    autoPlay: true,
-                                    autoPlaySpeed: 3000,
-                                    pauseOnHover: true,
-                                    enableResponsiveBreakpoints: true,
-                                    responsiveBreakpoints: {
-                                        portrait: {
-                                            changePoint: 480,
-                                            visibleItems: 1
-                                        },
-                                        landscape: {
-                                            changePoint: 640,
-                                            visibleItems: 2
-                                        },
-                                        tablet: {
-                                            changePoint: 768,
-                                            visibleItems: 3
-                                        }
-                                    }
-                                });
 
-                            });
-                    </script>
-                    <script src="<c:url value="/resources/js/jquery.flexisel.js"/>" type="text/javascripts"></script>
+        <div >
+            <jsp:include page="/nhacungcap"></jsp:include>
             </div>
-        </div>
         <jsp:include page="footer.jsp"></jsp:include>
     </body>
 </html>
