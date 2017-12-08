@@ -23,7 +23,7 @@ public class CategoryController/** implements Controller*/{
     @Autowired
     CategoryService categoryService;
     
-    @RequestMapping("/Category")
+    @RequestMapping("/category")
     public String category(ModelMap mm){
         mm.put("listDanhMuc",categoryService.getListDanhMuc());
         return "category";

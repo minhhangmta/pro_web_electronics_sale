@@ -33,7 +33,8 @@
                                 <h3>Categories</h3>
                                 <div class="w3ls_mobiles_grid_left_grid_sub">
                                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                    <jsp:include page="/Category"></jsp:include> 
+                                        <input type="hidden" value="${listDanhMuc}" name="listDanhMuc"/>
+                                    <jsp:include page="category.jsp"></jsp:include> 
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +104,7 @@
                             <div class="clearfix"> </div>
                         </div>
                         <div class="w3ls_mobiles_grid_right_grid3">                
-                            <jsp:include page="/product-list"></jsp:include>
+                            <!--jsp:include page="/product-list">/jsp:include>-->
                                 <div class="clearfix"> </div>
                             </div>
                         </div>
@@ -268,7 +269,7 @@
         <!-- //Related Products -->
         <!-- top-brands -->
         <div >
-            <jsp:include page="/nhacungcap"></jsp:include>
+            <!--jsp:include page="/nhacungcap">/jsp:include>-->
             </div>
         <jsp:include page="footer.jsp"></jsp:include>
     </body>
