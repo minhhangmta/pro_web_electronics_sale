@@ -19,7 +19,7 @@
                 <div class="container">
                     <ul>
                         <li><a href="Home/index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
-                        <li>Products1</li>
+                        <li>Products</li>
                     </ul>
                 </div>
             </div>
