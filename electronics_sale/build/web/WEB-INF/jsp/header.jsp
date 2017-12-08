@@ -47,8 +47,13 @@
         <div class="header" id="home1">
             <div class="container">
                 <div class="w3l_login">
-                    <a href="${pageContext.request.contextPath}/Login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-                    <a href="${pageContext.request.contextPath}/Logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+                    <table>
+                        <tr>
+                            <td><a href="${pageContext.request.contextPath}/Login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></td>
+                            <td></td>
+                            <td><a href="${pageContext.request.contextPath}/Logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="w3l_logo">
                     <h1><a href="${pageContext.request.contextPath}/index">Electronic Store<span>Your stores. Your place.</span></a></h1>
