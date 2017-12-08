@@ -36,12 +36,11 @@ public class ProductDaoImpl implements ProductDao {
             session.close();
         }
         return list;
+
     }
 
     @Override
     public List<Sanpham> getListProductByCategoryID(int categoryID) {
-        //from Sanpham where ma_dm=:categoryID
-        // query.setLong("categoryID", categoryID);
         Session session = HibernateUtil.getSessionFactory().openSession();
         ArrayList<Sanpham> list = new ArrayList<>();
         try {
@@ -56,10 +55,31 @@ public class ProductDaoImpl implements ProductDao {
         }
         return list;
     }
-//    public static void main(String[] args) {
-//        List<Sanpham> list = new ProductDaoImpl().getListProductByCategoryID(2);
-//        list.forEach((sp) -> {
-//            System.out.println(sp.getTensanpham());
-//        });
-//    }
+
+    @Override
+    public Sanpham getDetailProduct(int id) {
+        Session session =HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction=null;
+        try{
+            transaction=session.beginTransaction();
+            Query query=(Query)session.createQuery("from Sanpham where maSp=:id");
+            query.setLong("id", id);
+            Sanpham sp=(Sanpham) query.uniqueResult();
+            transaction.commit();
+            return sp;
+        }
+        catch(Exception ex){
+            if(transaction!=null){
+                transaction.rollback();
+            }
+            ex.printStackTrace();
+        }
+        finally{
+            session.flush();
+            session.close();
+        }
+        return null;
+    }
+
+    
 }
