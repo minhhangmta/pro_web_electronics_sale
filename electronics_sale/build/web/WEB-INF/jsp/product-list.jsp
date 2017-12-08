@@ -34,8 +34,7 @@
                         <input type="hidden" name="amount" value="880.00"/>   
                         <button type="submit" class="w3ls-cart">Add to cart</button>
                     </form>-->
-                    <a href="${pageContext.request.contextPath}/shopping/cart/${item.maSp}"><button class="w3ls-cart">Add to cart</button></a>
-                            </div> 
+                    <a href="${pageContext.request.contextPath}/shopping/cart/${item.maSp}"><button class="w3ls-cart">Add to cart</button></a>                            </div> 
                             <div class="mobiles_grid_pos">
                                 <h6>new</h6>
                             </div>
