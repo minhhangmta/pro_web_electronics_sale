@@ -35,3 +35,5 @@ ehthumbs.db
 Thumbs.db
 /target/
 /electronics_sale/dist/
+/electronics_sale/build/
+private.xml

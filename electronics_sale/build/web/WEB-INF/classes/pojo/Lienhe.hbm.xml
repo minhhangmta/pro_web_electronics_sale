@@ -11,14 +11,8 @@
         <many-to-one name="trangthai" class="pojo.Trangthai" fetch="select">
             <column name="ma_tt" />
         </many-to-one>
-        <property name="hoten" type="string">
-            <column name="hoten" length="50" not-null="true" />
-        </property>
         <property name="email" type="string">
             <column name="email" length="50" not-null="true" />
-        </property>
-        <property name="sodienthoai" type="string">
-            <column name="sodienthoai" length="20" not-null="true" />
         </property>
         <property name="lienhe" type="string">
             <column name="lienhe" length="1000" />
