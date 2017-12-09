@@ -27,6 +27,18 @@ public class ProductController {
 
     @Autowired
     ProductService productService;
+<<<<<<< HEAD
+    
+    @RequestMapping("/product-list")
+    public String dssanpham(ModelMap mm){
+        mm.put("listProduct",productService.getListProduct());
+        return "product-list";
+    }
+    
+    @RequestMapping("/productbycate")
+    public String ListProductByCategoryID(ModelMap mm,@RequestParam int categoryID){
+        mm.put("listProduct",productService.getListProductByCategoryID(categoryID));
+=======
     @Autowired
     CategoryService categoryService;
 
@@ -39,6 +51,7 @@ public class ProductController {
     public String ListProductByCategoryID(ModelMap mm, @PathVariable("id") int categoryID) {
         mm.put("listSanPham", productService.getListProductByCategoryID(categoryID));
         mm.put("listDanhMuc", categoryService.getListDanhMuc());
+>>>>>>> 1d2f85e053443fa928865c911ee31a213ba101b3
         return "product";
     }
 
