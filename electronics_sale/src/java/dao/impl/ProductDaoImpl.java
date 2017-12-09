@@ -45,7 +45,7 @@ public class ProductDaoImpl implements ProductDao {
         ArrayList<Sanpham> list = new ArrayList<>();
         try {
             Query query = session.createQuery("from Sanpham where ma_dm=:categoryID");
-            query.setInteger("categoryID", categoryID);
+            query.setLong("categoryID", categoryID);
             list = (ArrayList<Sanpham>) query.list();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -55,6 +55,18 @@ public class ProductDaoImpl implements ProductDao {
         }
         return list;
     }
+<<<<<<< HEAD
+    
+//    public static void main(String[] args) {
+//        List<Sanpham> list = new ProductDaoImpl().getListProduct();
+//        list.forEach((sp) -> {
+//            System.out.println(sp.getTensanpham());
+//        });
+////            Sanpham sp=new ProductDaoImpl().getDetailProduct(9);
+////            System.out.println(sp.getTensanpham());
+//    }
+=======
+>>>>>>> 1d2f85e053443fa928865c911ee31a213ba101b3
 
     @Override
     public Sanpham getDetailProduct(int id) {
@@ -63,7 +75,7 @@ public class ProductDaoImpl implements ProductDao {
         try{
             transaction=session.beginTransaction();
             Query query=(Query)session.createQuery("from Sanpham where maSp=:id");
-            query.setInteger("id", id);
+            query.setLong("id", id);
             Sanpham sp=(Sanpham) query.uniqueResult();
             transaction.commit();
             return sp;

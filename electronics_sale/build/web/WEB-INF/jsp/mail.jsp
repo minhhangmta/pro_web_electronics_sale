@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -43,11 +44,11 @@
                         </div>
                         <div class="col-md-7 contact-left">
                             <h4>Contact Form</h4>
-                            <form action="#" method="post">
-                                <input type="text" name="Name" placeholder="Your Name" required="">
-                                <input type="email" name="Email" placeholder="Your Email" required="">
+                            <form action="${pageContext.request.contextPath}/shopping/save" method="post" commandName="lienhe">
+                                <input  type="text" name="Name" placeholder="Your Name" required="">
+                                <input   type="email" name="Email" placeholder="Your Email" required="">
                                 <input type="text" name="Telephone" placeholder="Telephone No" required="">
-                                <textarea name="message" placeholder="Message..." required=""></textarea>
+                                <textarea  name="message" placeholder="Message..." required=""></textarea>
                                 <input type="submit" value="Submit" >
                             </form>
                         </div>

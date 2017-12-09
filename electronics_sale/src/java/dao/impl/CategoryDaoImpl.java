@@ -7,8 +7,10 @@ package dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.springframework.orm.hibernate3.HibernateJdbcException;
 import org.springframework.stereotype.Repository;
 import pojo.Danhmuc;
@@ -39,32 +41,10 @@ public class CategoryDaoImpl implements CategoryDao {
         return listCategory;
     }
 
-    public boolean existDanhMucConByID(int id) {
-        boolean check = false;
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            Query query = session.createQuery("from Danhmuc where ma_dm=:id and ma_dmcha!=0 ");
-            query.setInteger("id", id);
-            List result = query.list();
-            if (!result.isEmpty()) {
-                check = true;
-            }
-        } catch (HibernateJdbcException ex) {
-            ex.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
-        return check;
-    }
-
 //    public static void main(String[] args) {
 //        List<Danhmuc> list = new CategoryDaoImpl().getListDanhMuc();
 //        list.forEach((danhmuc) -> {
 //            System.out.println(danhmuc.getTendanhmuc());
 //        });
-//        System.out.println(new CategoryDaoImpl().existDanhMucConByID(13));
-
 //    }
-    
 }

@@ -16,61 +16,53 @@
                     <div class="">
                         <div class="">
                             <div class="modal-header">
-                                
+
                                 <h4 class="modal-title" id="myModalLabel">Don't Wait, Login now!</h4>
                             </div>
                             <div class="modal-body modal-body-sub">
                                 <div class="row">
                                     <div class="col-md-8 modal_body_left modal_body_left1" style="border-right: 1px dotted #C2C2C2;padding-right:3em;">
                                         <div class="sap_tabs">	
-                                            <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                                            <div id="" style="display: block; width: 100%; margin: 0px;">
                                                 <ul>
-                                                    <li class="resp-tab-item resp-tab-active" aria-controls="tab_item-0" role="tab"><span>Sign in</span></li>
-                                                    <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Sign up</span></li>
-                                                </ul>		
-                                                <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>Sign in</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
-                                                    <div class="facts">
-                                                        <div class="register">
-                                                            
-                                                            <p>${msg}</p>
+                                                    <li class="resp-tab-item resp-tab-active" aria-controls="tab_item-0" role="tab">
+                                                        <a href="${pageContext.request.contextPath}/dangky">
+                                                        <span>Đăng ký</span>
+                                                    </a>
+                                                </li>
+                                            </ul>		
+                                            <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0">
+                                                <span class="resp-arrow">
+
+                                                </span>Sign in
+                                            </h2>
+                                            <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
+                                                <div class="facts">
+                                                    <div class="register">
+                                                        <p>${msg}</p>
                                                         <form:form action="${pageContext.request.contextPath}/Login" method="POST" commandName="taikhoan">			
-                                                            <form:input path="username" placeholder="Email Address" type="text" required="" /><p>${msguser}</p>						
+                                                            <form:input path="username" placeholder="Username" type="text" required="" /><p>${msguser}</p>						
                                                             <form:input path="password"  placeholder="Password" type="password" required=""/>										
-                                                                <div class="sign-up">
-                                                                    <input type="submit" value="Sign in">
-                                                                </div>
-                                                            </form:form>
-                                                        </div>
-                                                    </div> 
-                                                </div>	 
-                                                <h2 class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>Sign up</h2><div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
-                                                    <div class="facts">
-                                                        <div class="register">
-                                                            <form action="#" method="post">			
-                                                                <input placeholder="Name" name="Name" type="text" required="">
-                                                                <input placeholder="Email Address" name="Email" type="email" required="">	
-                                                                <input placeholder="Password" name="Password" type="password" required="">	
-                                                                <input placeholder="Confirm Password" name="Password" type="password" required="">
-                                                                <div class="sign-up">
-                                                                    <input type="submit" value="Create Account">
-                                                                </div>
-                                                            </form>
-                                                        </div>
+                                                            <div class="sign-up">
+                                                                <input type="submit" value="Sign in">
+                                                            </div>
+                                                        </form:form>
                                                     </div>
-                                                </div> 			        					            	      
-                                            </div>	
-                                        </div>
+                                                </div> 
+                                            </div>	 
+                                        </div>	
+                                    </div>
                                     <script src="<c:url value="/resources/js/easyResponsiveTabs.js"/>"type="text/javascript"></script>
 
-                                    <script type="text/javascript">
-                                        $(document).ready(function () {
-                                            $('#horizontalTab').easyResponsiveTabs({
-                                                type: 'default', //Types: default, vertical, accordion           
-                                                width: 'auto', //auto or any width like 600px
-                                                fit: true   // 100% fit in a container
-                                            });
-                                        });
-                                    </script>
+                                    <!--                                    <script type="text/javascript">
+                                                                            $(document).ready(function () {
+                                                                                $('#horizontalTab').easyResponsiveTabs({
+                                                                                    type: 'default', //Types: default, vertical, accordion           
+                                                                                    width: 'auto', //auto or any width like 600px
+                                                                                    fit: true   // 100% fit in a container
+                                                                                });
+                                                                            });
+                                                                        </script>-->
                                     <div id="OR" class="hidden-xs">OR</div>
                                 </div>
                                 <div class="col-md-4 modal_body_right modal_body_right1">
