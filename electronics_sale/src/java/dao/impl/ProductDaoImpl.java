@@ -63,12 +63,12 @@ public class ProductDaoImpl implements ProductDao {
     }
     
 //    public static void main(String[] args) {
-////        List<Sanpham> list = new ProductDaoImpl().getListSanPham();
-////        list.forEach((sp) -> {
-////            System.out.println(sp.getTensanpham());
-////        });
-//            Sanpham sp=new ProductDaoImpl().getDetailProduct(9);
+//        List<Sanpham> list = new ProductDaoImpl().getListProduct();
+//        list.forEach((sp) -> {
 //            System.out.println(sp.getTensanpham());
+//        });
+////            Sanpham sp=new ProductDaoImpl().getDetailProduct(9);
+////            System.out.println(sp.getTensanpham());
 //    }
 
     @Override

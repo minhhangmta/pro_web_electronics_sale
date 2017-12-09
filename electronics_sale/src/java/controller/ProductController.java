@@ -32,13 +32,13 @@ public class ProductController {
     
     @RequestMapping("/product-list")
     public String dssanpham(ModelMap mm){
-        mm.put("danhsachsanpham",productService.getListProduct());
+        mm.put("listProduct",productService.getListProduct());
         return "product-list";
     }
     
     @RequestMapping("/productbycate")
     public String ListProductByCategoryID(ModelMap mm,@RequestParam int categoryID){
-        mm.put("danhsachsanpham",productService.getListProductByCategoryID(categoryID));
+        mm.put("listProduct",productService.getListProductByCategoryID(categoryID));
         return "product";
     }
 
