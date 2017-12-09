@@ -27,26 +27,10 @@ public class ProductController {
 
     @Autowired
     ProductService productService;
-//<<<<<<< HEAD
-//    
-//    @RequestMapping("/product-list")
-//    public String dssanpham(ModelMap mm){
-//        mm.put("listProduct",productService.getListProduct());
-//        return "product-list";
-//    }
-//    
-//    @RequestMapping("/productbycate")
-//    public String ListProductByCategoryID(ModelMap mm,@RequestParam int categoryID){
-//        mm.put("listProduct",productService.getListProductByCategoryID(categoryID));
-//=======
+
     @Autowired
     CategoryService categoryService;
 
-//    @RequestMapping("/product-list")
-//    public String dssanpham(ModelMap mm){
-////        mm.put("danhsachsanpham",productService.getListSanPham());
-//        return "product-list";
-//    }
     @RequestMapping("/product/{id}")
     public String ListProductByCategoryID(ModelMap mm, @PathVariable("id") int categoryID) {
         mm.put("listSanPham", productService.getListProductByCategoryID(categoryID));
