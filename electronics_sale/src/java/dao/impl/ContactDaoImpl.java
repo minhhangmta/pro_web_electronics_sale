@@ -11,8 +11,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 import pojo.Lienhe;
-import pojo.Trangthai;
 import util.HibernateUtil;
+
 /**
  *
  * @author tranv
@@ -26,11 +26,6 @@ public class ContactDaoImpl implements ContactDao{
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Lienhe contact=new Lienhe();
-            contact=lh;
-            Trangthai trangthai=new Trangthai();
-            trangthai.setMaTt(1);
-            contact.setTrangthai(trangthai);
             session.save(lh);
             transaction.commit();
             return true;

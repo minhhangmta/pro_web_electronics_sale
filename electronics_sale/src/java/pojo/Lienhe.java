@@ -11,25 +11,7 @@ public class Lienhe  implements java.io.Serializable {
 
      private Integer maLh;
      private Trangthai trangthai;
-     private String hoten;
-
-    public String getHoten() {
-        return hoten;
-    }
-
-    public void setHoten(String hoten) {
-        this.hoten = hoten;
-    }
-
-    public String getSodienthoai() {
-        return sodienthoai;
-    }
-
-    public void setSodienthoai(String sodienthoai) {
-        this.sodienthoai = sodienthoai;
-    }
      private String email;
-     private String sodienthoai;
      private String lienhe;
 
     public Lienhe() {
@@ -39,17 +21,9 @@ public class Lienhe  implements java.io.Serializable {
     public Lienhe(String email) {
         this.email = email;
     }
-    public Lienhe( String hoten,String email, String sodienthoai,String lienhe) {
-       this.hoten=hoten;
-       this.email = email;
-       this.sodienthoai=sodienthoai;
-       this.lienhe = lienhe;
-    }
-    public Lienhe(Trangthai trangthai, String hoten,String email, String sodienthoai,String lienhe) {
+    public Lienhe(Trangthai trangthai, String email, String lienhe) {
        this.trangthai = trangthai;
-       this.hoten=hoten;
        this.email = email;
-       this.sodienthoai=sodienthoai;
        this.lienhe = lienhe;
     }
    

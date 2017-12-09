@@ -40,5 +40,6 @@ public class IndexController {
         mm.put("listDanhMuc", categoryService.getListDanhMuc());
         mm.put("listSanPham", productService.getListProduct());
         return "product";
-    } 
+    }
+
 }

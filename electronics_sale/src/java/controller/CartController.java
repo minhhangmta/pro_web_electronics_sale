@@ -38,7 +38,7 @@ public class CartController {
     public String cart(@PathVariable(value = "id") int id, ModelMap mm, HttpSession session) {
         if (session.getAttribute("cart") == null) {
             List<Item> cart = new ArrayList<Item>();
-            cart.add(new Item(this.ps.DetailSanPham(id), 1));  // nếu cart rỗng thì thêm vào cart
+            cart.add(new Item(this.ps.DetailSanPham(id), 1));
             session.setAttribute("cart", cart);
         } else {
             List<Item> cart = (List<Item>) session.getAttribute("cart");
@@ -46,14 +46,14 @@ public class CartController {
             if (index == -1) {
                 cart.add(new Item(this.ps.DetailSanPham(id), 1));
             } else {
-                int quantity = cart.get(index).getQuantity() + 1; // nếu sản phẩm đã có trong cart thì tăng số lượng lên
+                int quantity = cart.get(index).getQuantity() + 1;
                 cart.get(index).setQuantity(quantity);
             }
             session.setAttribute("cart", cart);
         }
         return "cart";
     }
-    // kiểm tra danh sách sản phẩm trong cart
+
     public int isExisting(int id, HttpSession session) {
         List<Item> cart = (List<Item>) session.getAttribute("cart");
         for (int i = 0; i < cart.size(); i++) {
@@ -63,7 +63,7 @@ public class CartController {
         }
         return -1;
     }
-    // delete sản phẩm trong cart theo id
+
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable(value = "id") int id, HttpSession session) {
         List<Item> cart = (List<Item>) session.getAttribute("cart");
@@ -72,8 +72,6 @@ public class CartController {
         session.setAttribute("cart", cart);
         return "cart";
     }
-    
-    // update giỏ hàng
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update( HttpServletRequest request,HttpSession session) {
         List<Item> cart = (List<Item>) session.getAttribute("cart");
@@ -84,11 +82,5 @@ public class CartController {
         }
         session.setAttribute("cart", cart);
         return "cart";
-    }
-    
-    // checkout đơn hàng
-    @RequestMapping(value="/checkout")
-    public String checkout(){
-        return "checkout";
     }
 }

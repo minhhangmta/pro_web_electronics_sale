@@ -6,7 +6,6 @@
 package controller;
 
 import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -28,19 +27,19 @@ import service.ContactService;
 @Controller
 @Configuration
 @ComponentScan("service.impl")
-@RequestMapping("/shopping")
 public class ContactController {
-
-    @Autowired
-    ContactService contactService;
-
-    @RequestMapping(value = "/contact", method = RequestMethod.GET)
-    public String insert(ModelMap mm) {
-        mm.put("lienhe", new Lienhe());
-        return "mail";
-    }
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save( ModelMap mm,HttpServletRequest request) {
+//
+//    @Autowired
+//    ContactService contactService;
+//
+//    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+//    public String insert(ModelMap mm) {
+//        mm.put("lienhe", new Lienhe());
+//        return "contact";
+//    }
+//
+//    @RequestMapping(value = "/SaveContact", method = RequestMethod.POST)
+//    public String save(@ModelAttribute(value = "lienhe") Lienhe lienhe) {
 //        if (lienhe.getHoten() != null && lienhe.getEmail() != null && lienhe.getSodienthoai()!=null &&lienhe.getLienhe()!=null) {
 //            contactService.insertContact(lienhe);
 //            return "thanhcong";
@@ -48,13 +47,6 @@ public class ContactController {
 //        else{
 //            return "contact";
 //        }
-        Lienhe lh= new Lienhe();
-        lh.setHoten(request.getParameter("Name"));
-        lh.setEmail(request.getParameter("Email"));
-        lh.setSodienthoai(request.getParameter("Telephone"));
-        lh.setLienhe(request.getParameter("message"));
-        this.contactService.insertContact(lh);
-        return "product";
-    }
+//    }
 
 }

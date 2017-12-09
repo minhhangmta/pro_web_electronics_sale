@@ -5,7 +5,6 @@
  */
 package dao;
 
-import java.util.List;
 import pojo.Taikhoan;
 
 /**
@@ -14,6 +13,4 @@ import pojo.Taikhoan;
  */
 public interface AccountDao {
     public Taikhoan login(String userName,String passWord);
-    public List<Taikhoan> getListAccount();
-    public int insertAccount(Taikhoan account);
 }
