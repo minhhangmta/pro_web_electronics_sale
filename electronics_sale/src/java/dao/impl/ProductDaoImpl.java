@@ -55,6 +55,18 @@ public class ProductDaoImpl implements ProductDao {
         }
         return list;
     }
+<<<<<<< HEAD
+    
+//    public static void main(String[] args) {
+//        List<Sanpham> list = new ProductDaoImpl().getListProduct();
+//        list.forEach((sp) -> {
+//            System.out.println(sp.getTensanpham());
+//        });
+////            Sanpham sp=new ProductDaoImpl().getDetailProduct(9);
+////            System.out.println(sp.getTensanpham());
+//    }
+=======
+>>>>>>> 1d2f85e053443fa928865c911ee31a213ba101b3
 
     @Override
     public Sanpham getDetailProduct(int id) {

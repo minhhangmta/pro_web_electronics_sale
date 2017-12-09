@@ -1,3 +1,9 @@
+<%-- 
+    Document   : Account
+    Created on : Dec 8, 2017, 7:39:48 PM
+    Author     : tranv
+--%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -25,31 +31,32 @@
                                         <div class="sap_tabs">	
                                             <div id="" style="display: block; width: 100%; margin: 0px;">
                                                 <ul>
-                                                    <li class="resp-tab-item resp-tab-active" aria-controls="tab_item-0" role="tab">
-                                                        <a href="${pageContext.request.contextPath}/dangky">
-                                                        <span>Đăng ký</span>
+                                                    <li class="resp-tab-item resp-tab-active" aria-controls="tab_item-1" role="tab">
+                                                        <a href="${pageContext.request.contextPath}/Login">
+                                                       <span>Đăng nhập</span>
                                                     </a>
                                                 </li>
                                             </ul>		
-                                            <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0">
-                                                <span class="resp-arrow">
-
-                                                </span>Sign in
-                                            </h2>
+                                            <p>${msgAccount} ${msgAccountErr} ${msgPass}</p>
+                                            
                                             <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
                                                 <div class="facts">
                                                     <div class="register">
-                                                        <p>${msg}</p>
-                                                        <form:form action="${pageContext.request.contextPath}/Login" method="POST" commandName="taikhoan">			
-                                                            <form:input path="username" placeholder="Username" type="text" required="" /><p>${msguser}</p>						
-                                                            <form:input path="password"  placeholder="Password" type="password" required=""/>										
+                                                        <form action="${pageContext.request.contextPath}/request" method="post" commandName="accountnew">			
+                                                            <input placeholder="Name" name="NameAccount" type="text" required="">
+                                                            <input placeholder="Email" name="EmailAccount" type="email" required="">
+                                                            <input placeholder="Telephone" name="Telephone" type="text" required="">
+                                                            <input placeholder="Address" name="Address" type="text" required="">
+                                                            <input placeholder="Username" name="Username" type="text" required="">
+                                                            <input placeholder="Password" name="Password" type="password" required="">	
+                                                            <input placeholder="Confirm Password" name="PasswordCf" type="password" required="">
                                                             <div class="sign-up">
-                                                                <input type="submit" value="Sign in">
+                                                                <input type="submit" value="Create Account">
                                                             </div>
-                                                        </form:form>
+                                                        </form>
                                                     </div>
-                                                </div> 
-                                            </div>	 
+                                                </div>
+                                            </div> 			        					            	      
                                         </div>	
                                     </div>
                                     <script src="<c:url value="/resources/js/easyResponsiveTabs.js"/>"type="text/javascript"></script>
@@ -90,3 +97,4 @@
         <jsp:include page="footer.jsp"></jsp:include>
     </body>
 </html>
+

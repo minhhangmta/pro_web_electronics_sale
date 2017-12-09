@@ -101,7 +101,7 @@
                                     Pages <span class="caret"></span>
                                 </a>
                             </li>  
-                            <li><a href="${pageContext.request.contextPath}/contact">Mail Us</a></li>
+                            <li><a href="${pageContext.request.contextPath}/shopping/contact">Mail Us</a></li>
                         </ul>
                     </div>
                 </nav>
