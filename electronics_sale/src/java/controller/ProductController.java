@@ -10,11 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.portlet.ModelAndView;
-import service.impl.ProductServiceImpl;
+import service.CategoryService;
 import service.ProductService;
 
 /**
@@ -24,11 +23,11 @@ import service.ProductService;
 @Controller
 @Configuration
 @ComponentScan("service.impl")
-
 public class ProductController {
 
     @Autowired
     ProductService productService;
+<<<<<<< HEAD
     
     @RequestMapping("/product-list")
     public String dssanpham(ModelMap mm){
@@ -39,6 +38,20 @@ public class ProductController {
     @RequestMapping("/productbycate")
     public String ListProductByCategoryID(ModelMap mm,@RequestParam int categoryID){
         mm.put("listProduct",productService.getListProductByCategoryID(categoryID));
+=======
+    @Autowired
+    CategoryService categoryService;
+
+//    @RequestMapping("/product-list")
+//    public String dssanpham(ModelMap mm){
+////        mm.put("danhsachsanpham",productService.getListSanPham());
+//        return "product-list";
+//    }
+    @RequestMapping("/product/{id}")
+    public String ListProductByCategoryID(ModelMap mm, @PathVariable("id") int categoryID) {
+        mm.put("listSanPham", productService.getListProductByCategoryID(categoryID));
+        mm.put("listDanhMuc", categoryService.getListDanhMuc());
+>>>>>>> 1d2f85e053443fa928865c911ee31a213ba101b3
         return "product";
     }
 
