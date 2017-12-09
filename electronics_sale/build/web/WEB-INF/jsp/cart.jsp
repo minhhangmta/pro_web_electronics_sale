@@ -59,7 +59,8 @@
                     </tr>
                 </table>
             </form>
-            <a href="${pageContext.request.contextPath}/product">Tiếp tục mua hàng</a>
+                    <a href="${pageContext.request.contextPath}/product"><button class="w3ls-cart">Tiếp tục mua hàng</button></a>
+                    <a href="${pageContext.request.contextPath}/shopping/checkout"><button class="w3ls-cart">Mua hàng</button></a>
         </div>
         <jsp:include page="footer.jsp"></jsp:include>
     </body>
