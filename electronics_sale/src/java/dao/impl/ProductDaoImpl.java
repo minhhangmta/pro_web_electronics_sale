@@ -45,7 +45,7 @@ public class ProductDaoImpl implements ProductDao {
         ArrayList<Sanpham> list = new ArrayList<>();
         try {
             Query query = session.createQuery("from Sanpham where ma_dm=:categoryID");
-            query.setLong("categoryID", categoryID);
+            query.setInteger("categoryID", categoryID);
             list = (ArrayList<Sanpham>) query.list();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -63,7 +63,7 @@ public class ProductDaoImpl implements ProductDao {
         try{
             transaction=session.beginTransaction();
             Query query=(Query)session.createQuery("from Sanpham where maSp=:id");
-            query.setLong("id", id);
+            query.setInteger("id", id);
             Sanpham sp=(Sanpham) query.uniqueResult();
             transaction.commit();
             return sp;

@@ -4989,3 +4989,7 @@ td.invert-image a img {
 		margin-bottom: 1em;
 	}
 }
+
+#link-category:hover{
+    color:#533EDB;
+}

@@ -4,6 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript"
         src="${pageContext.request.contextPath}/resources/js/script.js"></script>
         <title>category</title>
@@ -18,14 +19,14 @@
                             <c:if test="${list.maDmcha==0}">
                                 <c:set value="${list.maDm}" var="maCha"></c:set>
                                     <!-- get ten danh muc cha -->
-                                    <li><a href="${path}/product" onclick="hiddenCategory()">${list.tendanhmuc}</a></li>
+                                    <li><p>${list.tendanhmuc}</p></li>
                                 <!-- -->
 
                                 <!-- get ten danh muc con -->
                                 <table id="sub-category" style="display: block;">
                                     <c:forEach items="${listDanhMuc}" var="list">
                                         <c:if test="${list.maDmcha == maCha}">
-                                            <li><a href="${path}/product/${list.maDm}" style="padding-left: 10px; color:#3C2B6F;">${list.tendanhmuc}</a></li>
+                                            <li><a id="link-category" href="${path}/product/${list.maDm}" style="padding-left: 10px; color:#767191;">${list.tendanhmuc}</a></li>
                                             </c:if>
                                         </c:forEach>
                                 </table>
