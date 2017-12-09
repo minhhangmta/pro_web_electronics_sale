@@ -10,7 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import service.CategoryService;
@@ -23,11 +22,11 @@ import service.ProductService;
 @Controller
 @Configuration
 @ComponentScan("service.impl")
+
 public class ProductController {
 
     @Autowired
     ProductService productService;
-
     @Autowired
     CategoryService categoryService;
 

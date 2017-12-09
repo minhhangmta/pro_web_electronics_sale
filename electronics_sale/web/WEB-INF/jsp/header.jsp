@@ -22,7 +22,7 @@
         <!-- //font-awesome icons -->
         <!-- js -->
         <script src="<c:url value="/resources/js/jquery-3.2.1.min.js"/>"type="text/javascript"></script>
-        <link href="stylesheet" href="<c:url value="/resources/css/jquery.countdown.css"/>" /> <!-- countdown --> 
+        <link href="stylesheet" href="<c:url value="/resorces/css/jquery.countdown.css"/>" /> <!-- countdown --> 
         <!-- //js -->  
         <!-- web fonts --> 
         <link href='//fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
