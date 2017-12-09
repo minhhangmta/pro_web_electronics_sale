@@ -39,24 +39,24 @@ public class CategoryDaoImpl implements CategoryDao {
         return listCategory;
     }
 
-    public boolean existDanhMucConByID(int id) {
-        boolean check = false;
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            Query query = session.createQuery("from Danhmuc where ma_dm=:id and ma_dmcha!=0 ");
-            query.setInteger("id", id);
-            List result = query.list();
-            if (!result.isEmpty()) {
-                check = true;
-            }
-        } catch (HibernateJdbcException ex) {
-            ex.printStackTrace();
-        } finally {
-            session.flush();
-            session.close();
-        }
-        return check;
-    }
+//    public boolean existDanhMucConByID(int id) {
+//        boolean check = false;
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+//        try {
+//            Query query = session.createQuery("from Danhmuc where ma_dm=:id and ma_dmcha!=0 ");
+//            query.setInteger("id", id);
+//            List result = query.list();
+//            if (!result.isEmpty()) {
+//                check = true;
+//            }
+//        } catch (HibernateJdbcException ex) {
+//            ex.printStackTrace();
+//        } finally {
+//            session.flush();
+//            session.close();
+//        }
+//        return check;
+//    }
 
 //    public static void main(String[] args) {
 //        List<Danhmuc> list = new CategoryDaoImpl().getListDanhMuc();

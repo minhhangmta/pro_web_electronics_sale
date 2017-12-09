@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import service.impl.*;
 import service.*;
 
 
@@ -20,11 +19,11 @@ import service.*;
 @ComponentScan("service.impl")
 
 
-public class CategoryController/** implements Controller*/{
+public class CategoryController{
     @Autowired
     CategoryService categoryService;
     
-    @RequestMapping("/Category")
+    @RequestMapping("/category")
     public String category(ModelMap mm){
         mm.put("listDanhMuc",categoryService.getListDanhMuc());
         return "category";
