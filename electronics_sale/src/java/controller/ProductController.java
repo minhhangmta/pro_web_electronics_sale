@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import service.CategoryService;
 import service.ProductService;
 
-/**
- *
- * @author tranv
- */
+
+
 @Controller
 @Configuration
 @ComponentScan("service.impl")
