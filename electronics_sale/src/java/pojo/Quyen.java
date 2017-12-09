@@ -1,5 +1,5 @@
 package pojo;
-// Generated Nov 29, 2017 9:53:13 AM by Hibernate Tools 4.3.1
+// Generated Dec 2, 2017 3:44:02 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,28 +11,23 @@ import java.util.Set;
 public class Quyen  implements java.io.Serializable {
 
 
-     private int maQ;
+     private Integer maQ;
      private String tenquyen;
      private Set taikhoans = new HashSet(0);
 
     public Quyen() {
     }
 
-	
-    public Quyen(int maQ) {
-        this.maQ = maQ;
-    }
-    public Quyen(int maQ, String tenquyen, Set taikhoans) {
-       this.maQ = maQ;
+    public Quyen(String tenquyen, Set taikhoans) {
        this.tenquyen = tenquyen;
        this.taikhoans = taikhoans;
     }
    
-    public int getMaQ() {
+    public Integer getMaQ() {
         return this.maQ;
     }
     
-    public void setMaQ(int maQ) {
+    public void setMaQ(Integer maQ) {
         this.maQ = maQ;
     }
     public String getTenquyen() {

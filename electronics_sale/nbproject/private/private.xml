@@ -3,27 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/product-detail.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/about.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/src/java/controller/IndexController.java</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/product.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/manufacture.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/header.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/footer.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/product-list.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/mail.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/contact.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/src/java/controller/ContactController.java</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/error-page.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/src/java/controller/ManufactureController.java</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/login.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/success-page.jsp</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/src/java/controller/ListProductController.java</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/src/java/controller/ProductController.java</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/src/java/controller/LoginController.java</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/src/java/dao/impl/AccountDaoImpl.java</file>
-            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/electronics_sale/web/WEB-INF/jsp/category.jsp</file>
+<<<<<<< HEAD
+            <file>file:/C:/Users/tranv/OneDrive/Documents/GitHub/pro_web_electronics_sale/electronics_sale/web/WEB-INF/jsp/login.jsp</file>
+            <file>file:/C:/Users/tranv/OneDrive/Documents/GitHub/pro_web_electronics_sale/electronics_sale/src/java/controller/LoginController.java</file>
+            <file>file:/C:/Users/tranv/OneDrive/Documents/GitHub/pro_web_electronics_sale/electronics_sale/src/java/pojo/Taikhoan.java</file>
+            <file>file:/C:/Users/tranv/OneDrive/Documents/GitHub/pro_web_electronics_sale/electronics_sale/web/WEB-INF/jsp/Account.jsp</file>
+=======
+            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/2017/Project/pro_web_electronics_sale/electronics_sale/src/java/controller/IndexController.java</file>
+            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/2017/Project/pro_web_electronics_sale/electronics_sale/web/WEB-INF/jsp/header.jsp</file>
+            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/2017/Project/pro_web_electronics_sale/electronics_sale/src/java/dao/impl/ProductDaoImpl.java</file>
+            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/2017/Project/pro_web_electronics_sale/electronics_sale/web/WEB-INF/jsp/product-list.jsp</file>
+            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/2017/Project/pro_web_electronics_sale/electronics_sale/web/WEB-INF/jsp/product.jsp</file>
+            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/2017/Project/pro_web_electronics_sale/electronics_sale/web/WEB-INF/jsp/category.jsp</file>
+            <file>file:/E:/INFORMATION%20TECHNOLOGY/Nam%204%20-%20Ki%201/Ky%207/Lap%20trinh%20nang%20cao/2017/Project/pro_web_electronics_sale/electronics_sale/src/java/service/impl/ProductServiceImpl.java</file>
+>>>>>>> 1d2f85e053443fa928865c911ee31a213ba101b3
         </group>
     </open-files>
 </project-private>

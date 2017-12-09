@@ -37,7 +37,7 @@ public class ManufactureDaoImpl implements ManufactureDao{
         return null;
     }
 //    public static void main(String[] args) {
-//        List<Nhacungcap> list = new NhaCungCapDaoImpl().getListNhaCungCap();
+//        List<Nhacungcap> list = new ManufactureDaoImpl().getListNhaCungCap();
 //        list.forEach((ncc) -> {
 //            System.out.println(ncc.getAnh());
 //        });

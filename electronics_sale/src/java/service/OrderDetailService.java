@@ -5,13 +5,10 @@
  */
 package service;
 
-import java.util.List;
-import pojo.Danhmuc;
-
 /**
  *
  * @author tranv
  */
-public interface ListProductService {
-    public List<Danhmuc> getListDanhMuc();
+public interface OrderDetailService {
+    
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 29, 2017 9:53:15 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 2, 2017 3:44:03 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojo.Quyen" table="quyen" catalog="web_electronic_sales" optimistic-lock="version">
-        <id name="maQ" type="int">
+        <id name="maQ" type="java.lang.Integer">
             <column name="ma_q" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="tenquyen" type="string">
             <column name="tenquyen" length="50" />

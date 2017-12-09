@@ -34,3 +34,4 @@ target/*
 ehthumbs.db
 Thumbs.db
 /target/
+/electronics_sale/dist/

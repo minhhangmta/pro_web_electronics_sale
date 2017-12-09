@@ -1,7 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
     <head>
@@ -32,20 +30,20 @@
                         <iframe src="https://www.youtube.com/embed/ZQa6GUVnbNM"></iframe>
                     </div>
                     <script>
-            $(document).ready(function () {
-                $('.popup-with-zoom-anim').magnificPopup({
-                    type: 'inline',
-                    fixedContentPos: false,
-                    fixedBgPos: true,
-                    overflowY: 'auto',
-                    closeBtnInside: true,
-                    preloader: false,
-                    midClick: true,
-                    removalDelay: 300,
-                    mainClass: 'my-mfp-zoom-in'
-                });
+                        $(document).ready(function () {
+                            $('.popup-with-zoom-anim').magnificPopup({
+                                type: 'inline',
+                                fixedContentPos: false,
+                                fixedBgPos: true,
+                                overflowY: 'auto',
+                                closeBtnInside: true,
+                                preloader: false,
+                                midClick: true,
+                                removalDelay: 300,
+                                mainClass: 'my-mfp-zoom-in'
+                            });
 
-            });
+                        });
                     </script>
                 </div>
                 <div class="col-md-7 wthree_banner_bottom_right">
@@ -1147,7 +1145,7 @@
                         </div>
                         <script src="<c:url value="/resources/js/jquery.wmuSlider.js"/>" type="text/javascripts"></script>
                         <script>
-            $('.example1').wmuSlider();
+                        $('.example1').wmuSlider();
                         </script> 
                     </div>
                     <div class="col-md-5 w3agile_special_deals_grid_right">
@@ -1163,60 +1161,28 @@
         </div>
         <!-- //special-deals -->
         <!-- top-brands -->
-        <div class="top-brands">
-            <div class="container">
-                <h3>Top Brands</h3>
-                <div class="sliderfig">
-                    <!--                    jsp:include page="/nhacungcap">jsp:include>-->
-                </div>
-                <script type="text/javascript">
-                    $(window).load(function () {
-                        $("#flexiselDemo1").flexisel({
-                            visibleItems: 4,
-                            animationSpeed: 1000,
-                            autoPlay: true,
-                            autoPlaySpeed: 3000,
-                            pauseOnHover: true,
-                            enableResponsiveBreakpoints: true,
-                            responsiveBreakpoints: {
-                                portrait: {
-                                    changePoint: 480,
-                                    visibleItems: 1
-                                },
-                                landscape: {
-                                    changePoint: 640,
-                                    visibleItems: 2
-                                },
-                                tablet: {
-                                    changePoint: 768,
-                                    visibleItems: 3
-                                }
-                            }
-                        });
-
-                    });
-                </script>
-                <script src="<c:url value="/resources/js/jquery.flexisel.js"/>" type="text/javascripts"></script>
+        <div >
+            <!--jsp:include page="/nhacungcap">jsp:include>-->
             </div>
-        </div>
-        <!-- //top-brands --> 
+
+            <!-- //top-brands --> 
         <jsp:include page="footer.jsp"></jsp:include>
             <!-- cart-js -->
 
             <script src="<c:url value="/resources/js/minicart.js"/>" type="text/javascripts"></script>
         <script>
-                    w3ls.render();
+                        w3ls.render();
 
-                    w3ls.cart.on('w3sb_checkout', function (evt) {
-                        var items, len, i;
+                        w3ls.cart.on('w3sb_checkout', function (evt) {
+                            var items, len, i;
 
-                        if (this.subtotal() > 0) {
-                            items = this.items();
+                            if (this.subtotal() > 0) {
+                                items = this.items();
 
-                            for (i = 0, len = items.length; i < len; i++) {
+                                for (i = 0, len = items.length; i < len; i++) {
+                                }
                             }
-                        }
-                    });
+                        });
         </script>  
         <!-- //cart-js --> 
     </body>

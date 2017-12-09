@@ -19,14 +19,15 @@ import service.ProductService;
 @Service
 @Transactional
 public class ProductServiceImpl implements ProductService{
+    
     @Override
-    public List<Sanpham> getListSanPham(){
-        return new ProductDaoImpl().getListSanPham();
+    public List<Sanpham> getListProduct(){
+        return new ProductDaoImpl().getListProduct();
     }
-
+    
     @Override
-    public Sanpham DetailSanPham() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Sanpham DetailSanPham(int id) {
+        return new ProductDaoImpl().getDetailProduct(id);
     }
 
     @Override

@@ -17,17 +17,24 @@
 ">
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
     <context:component-scan base-package="controller" ></context:component-scan>
-
+<!--    <bean class="controller.ManufactureController" name="manufactureController"/>
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="nhacungcap">manufactureController</prop>                
+            </props>
+        </property>
+    </bean>-->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
 
-   
-    <!--    <mvc:resources mapping="/resources/**" location="/resources/" />
-     <mvc:annotation-driven />
-     <context:annotation-config/>
-     <bean id="multipartResolver"   
-           class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/> 
-    -->
+    
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:annotation-driven />
+    <context:annotation-config/>
+    <bean id="multipartResolver"   
+                 class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/> 
+    
 </beans>

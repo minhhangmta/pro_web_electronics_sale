@@ -41,14 +41,14 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="web_electronic_sales"/>
-  <table-filter match-name="taikhoan"/>
-  <table-filter match-name="danhmuc"/>
-  <table-filter match-name="khachhang"/>
-  <table-filter match-name="sanpham"/>
-  <table-filter match-name="chitiethd"/>
-  <table-filter match-name="trangthai"/>
-  <table-filter match-name="quyen"/>
-  <table-filter match-name="nhacungcap"/>
-  <table-filter match-name="lienhe"/>
   <table-filter match-name="donhang"/>
+  <table-filter match-name="taikhoan"/>
+  <table-filter match-name="khachhang"/>
+  <table-filter match-name="chitiethd"/>
+  <table-filter match-name="danhmuc"/>
+  <table-filter match-name="quyen"/>
+  <table-filter match-name="lienhe"/>
+  <table-filter match-name="nhacungcap"/>
+  <table-filter match-name="trangthai"/>
+  <table-filter match-name="sanpham"/>
 </hibernate-reverse-engineering>
