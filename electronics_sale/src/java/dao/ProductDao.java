@@ -16,4 +16,5 @@ public interface ProductDao {
     public List<Sanpham> getListProduct();
     public List<Sanpham> getListProductByCategoryID(int categoryID);
     public Sanpham getDetailProduct(int id);
+    public List<Sanpham> getListNewProduct(int maTT);
 }  

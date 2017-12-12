@@ -44,4 +44,9 @@ public class ProductServiceImpl implements ProductService{
     public List<Sanpham> getListProductByCategoryID(int categoryID) {
         return new ProductDaoImpl().getListProductByCategoryID(categoryID);
     }
+
+    @Override
+    public List<Sanpham> getListNewProduct(int maTT) {
+        return new ProductDaoImpl().getListNewProduct(maTT);
+    }
 }

@@ -81,5 +81,22 @@ public class ProductDaoImpl implements ProductDao {
         return null;
     }
 
+    @Override
+    public List<Sanpham> getListNewProduct(int maTT) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        ArrayList<Sanpham> list = new ArrayList<>();
+        try {
+            Query query = session.createQuery("from Sanpham where ma_tt=:maTT");
+            query.setInteger("maTT", maTT);
+            list = (ArrayList<Sanpham>) query.list();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return list;
+    }
+
     
 }

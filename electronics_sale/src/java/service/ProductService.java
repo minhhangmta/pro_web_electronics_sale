@@ -18,4 +18,5 @@ public interface ProductService {
     public Sanpham DetailSanPham(int id);
     public Sanpham InsertSanPham();
     public Sanpham DeleteSanPham();
+    public List<Sanpham> getListNewProduct(int maTT);
 }

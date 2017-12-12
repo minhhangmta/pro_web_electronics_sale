@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pojo.Sanpham;
 import service.*;
+import util.Constant;
 
 /**
  *
@@ -26,7 +27,8 @@ import service.*;
 public class IndexController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
-    public String index() {
+    public String index(ModelMap mm) {
+        mm.put("listNewPro", productService.getListNewProduct(Constant.TRANGTHAI_NEW));
         return "index";
     }
 
