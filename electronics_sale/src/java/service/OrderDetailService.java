@@ -5,10 +5,12 @@
  */
 package service;
 
+import pojo.Chitiethd;
+
 /**
  *
  * @author tranv
  */
 public interface OrderDetailService {
-    
+    public boolean saveOrderDetailService(Chitiethd ct);
 }

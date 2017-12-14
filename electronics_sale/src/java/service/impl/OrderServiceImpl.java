@@ -5,10 +5,32 @@
  */
 package service.impl;
 
+import dao.OrderDao;
+import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import pojo.Donhang;
+import service.OrderService;
+
 /**
  *
  * @author tranv
  */
-public class OrderServiceImpl {
+@Service
+@Transactional
+public class OrderServiceImpl implements OrderService
+{
+    @Autowired
+    OrderDao orderDao;
+    @Override
+    public boolean saveOrder(Donhang donhang) {
+        return orderDao.saveOrder(donhang);
+    }
+
+    @Override
+    public int getIdOrder(Donhang donhang) {
+        return orderDao.getIdOrder(donhang);
+    }
+
     
 }

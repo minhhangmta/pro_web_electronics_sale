@@ -6,6 +6,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,8 +18,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pojo.Chitiethd;
+import pojo.Donhang;
 import pojo.Item;
-import pojo.Sanpham;
+import service.OrderDetailService;
+
+import service.OrderService;
 import service.ProductService;
 
 /**
@@ -38,13 +43,13 @@ public class CartController {
     public String cart(@PathVariable(value = "id") int id, ModelMap mm, HttpSession session) {
         if (session.getAttribute("cart") == null) {
             List<Item> cart = new ArrayList<Item>();
-            cart.add(new Item(this.ps.DetailSanPham(id), 1));  // nếu cart rỗng thì thêm vào cart
+            cart.add(new Item(this.ps.getDetailSanPham(id), 1));  // nếu cart rỗng thì thêm vào cart
             session.setAttribute("cart", cart);
         } else {
             List<Item> cart = (List<Item>) session.getAttribute("cart");
             int index = isExisting(id, session);
             if (index == -1) {
-                cart.add(new Item(this.ps.DetailSanPham(id), 1));
+                cart.add(new Item(this.ps.getDetailSanPham(id), 1));
             } else {
                 int quantity = cart.get(index).getQuantity() + 1; // nếu sản phẩm đã có trong cart thì tăng số lượng lên
                 cart.get(index).setQuantity(quantity);
@@ -87,8 +92,44 @@ public class CartController {
     }
     
     // checkout đơn hàng
-    @RequestMapping(value="/checkout")
+    @RequestMapping(value="/checkout", method = RequestMethod.GET)
     public String checkout(){
         return "checkout";
+    }
+    @Autowired
+    OrderService orderService;
+    
+    @Autowired
+    OrderDetailService orderDetailService;
+    
+    @RequestMapping(value = "/seveOrder",method = RequestMethod.POST)
+    public String checkout(HttpSession session,ModelMap mm, HttpServletRequest request){
+        List<Item> cart= (List<Item>) session.getAttribute("cart");
+        Donhang donhang=new Donhang();
+        donhang.setHoten(request.getParameter("nameCustomer"));
+        donhang.setNgaytao(new Date());
+        donhang.setSodienthoai(request.getParameter("phoneCustomer"));
+        donhang.setDiachi(request.getParameter("addressCustomer"));
+        donhang.setEmail(request.getParameter("emailCustomer"));
+        //donhang.setThanhtoan();
+        orderService.saveOrder(donhang);
+        int i= orderService.getIdOrder(donhang);
+        if(i!=-1){
+            for(Item item:cart){
+                Donhang dh= new Donhang();
+                dh.setMaHd(i);
+                Chitiethd ct= new Chitiethd();
+                ct.setSanpham(item.getSanpham());
+                ct.setSoluong(item.getQuantity());
+                ct.setDonhang(dh);
+                ct.setTongtien(item.getSanpham().getGia()*item.getQuantity());
+                ct.setThanhtien(item.getSanpham().getGia()*item.getQuantity()-item.getSanpham().getGia()*item.getQuantity()*item.getSanpham().getSale()/100);
+                orderDetailService.saveOrderDetailService(ct);
+            }
+        }
+        // remove cart
+        session.removeAttribute("cart");
+        
+        return "success-page";
     }
 }

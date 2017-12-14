@@ -12,5 +12,6 @@ import pojo.Donhang;
  * @author tranv
  */
 public interface OrderDao{
-    public Donhang OrderDao();
+    public boolean saveOrder(Donhang donhang);
+    public int getIdOrder(Donhang donhang);
 }

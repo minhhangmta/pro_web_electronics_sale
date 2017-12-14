@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService{
     }
     
     @Override
-    public Sanpham DetailSanPham(int id) {
+    public Sanpham getDetailSanPham(int id) {
         return new ProductDaoImpl().getDetailProduct(id);
     }
 

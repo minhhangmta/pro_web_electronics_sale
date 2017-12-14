@@ -15,7 +15,7 @@ import pojo.Sanpham;
 public interface ProductService {
     public List<Sanpham> getListProduct();
     public List<Sanpham> getListProductByCategoryID(int categoryID);
-    public Sanpham DetailSanPham(int id);
+    public Sanpham getDetailSanPham(int id);
     public Sanpham InsertSanPham();
     public Sanpham DeleteSanPham();
 }
