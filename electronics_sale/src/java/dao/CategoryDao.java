@@ -22,4 +22,5 @@ public interface CategoryDao {
     public int editCategory(Danhmuc cate);
     public int DeleteCategory(int id);
     public Danhmuc getCategoryByID(int id);
+    public List<Danhmuc> getListDanhMucCha();
 }

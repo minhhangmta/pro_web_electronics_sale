@@ -136,6 +136,8 @@ public class CategoryDaoImpl implements CategoryDao {
         }
         return a;
     }
+    
+
 //    public boolean existDanhMucConByID(int id) {
 //        boolean check = false;
 //        Session session = HibernateUtil.getSessionFactory().openSession();
@@ -161,4 +163,21 @@ public class CategoryDaoImpl implements CategoryDao {
 //        });
 //        System.out.println(new CategoryDaoImpl().existDanhMucConByID(13));
 //    }
+    
+    @Override
+    public List<Danhmuc> getListDanhMucCha() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        List<Danhmuc> listCategory = new ArrayList<>();
+        try {
+            Query query = session.createQuery("from Danhmuc where ma_dmcha = 0");
+            listCategory = (ArrayList<Danhmuc>) query.list();
+        } catch (HibernateJdbcException ex) {
+            ex.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return listCategory;
+    } 
+    
 }

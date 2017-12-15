@@ -43,4 +43,9 @@ public class CategoryServiceImpl implements CategoryService {
      public Danhmuc getCategoryByID(int id){
         return categoryDao.getCategoryByID(id);
     }
+     @Override
+    public List<Danhmuc> getListDanhMucCha() {
+        return categoryDao.getListDanhMucCha();
+    }
+
 }

@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -19,7 +20,7 @@
             <div class="breadcrumb_dress">
                 <div class="container">
                     <ul>
-                        <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
+                        <li><a href="${pageContext.request.contextPath}/index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
                         <li>About Us</li>
                     </ul>
                 </div>
@@ -54,7 +55,7 @@
                             <div class="clearfix"> </div>
                         </div>
                         <div class="col-md-6 w3ls_about_grid_right">
-                            <img src="images/52.jpg" alt=" " class="img-responsive" />
+                            <img src="<c:url value="/resources/images/2.jpg"/>" alt=" " class="img-responsive" />
                         </div>
                         <div class="clearfix"> </div>
                     </div>
@@ -67,7 +68,7 @@
                     <h3>Meet Our Team</h3>
                     <div class="wthree_team_grids">
                         <div class="col-md-3 wthree_team_grid">
-                            <img src="images/t4.png" alt=" " class="img-responsive" />
+                            <img src="<c:url value="/resources/images/t4.png"/>"" alt=" " class="img-responsive" />
                             <h4>Smith Allen <span>Manager</span></h4>
                             <div class="agileits_social_button">
                                 <ul>
@@ -79,7 +80,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 wthree_team_grid">
-                            <img src="images/t5.png" alt=" " class="img-responsive" />
+                            <img src="<c:url value="/resources/images/t5.png"/>"" alt=" " class="img-responsive" />
                             <h4>Laura James <span>Designer</span></h4>
                             <div class="agileits_social_button">
                                 <ul>
@@ -91,7 +92,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 wthree_team_grid">
-                            <img src="images/t6.png" alt=" " class="img-responsive" />
+                            <img src="<c:url value="/resources/images/t6.png"/>"" alt=" " class="img-responsive" />
                             <h4>Crisp Doe <span>Director</span></h4>
                             <div class="agileits_social_button">
                                 <ul>
@@ -103,7 +104,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 wthree_team_grid">
-                            <img src="images/t7.png" alt=" " class="img-responsive" />
+                            <img src="<c:url value="/resources/images/t7.png"/>"" alt=" " class="img-responsive" />
                             <h4>Linda Rosy <span>Quality Checker</span></h4>
                             <div class="agileits_social_button">
                                 <ul>
@@ -129,7 +130,7 @@
                     <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
                         voluptatibus maiores alias consequatur aut perferendis doloribus asperiores 
                         repellat.</p>
-                    <a href="products.html">Shop Now</a>
+                    <a href="${pageContext.request.contextPath}/product">Shop Now</a>
                 </div>
             </div>
             <!-- //team-bottom -->

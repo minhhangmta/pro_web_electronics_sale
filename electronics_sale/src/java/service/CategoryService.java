@@ -17,4 +17,5 @@ public interface CategoryService {
     public int insertCategory(Danhmuc dm);
     public int editCategory(Danhmuc dm);
     public Danhmuc getCategoryByID(int id);
+    public List<Danhmuc> getListDanhMucCha();
 }

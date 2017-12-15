@@ -22,16 +22,17 @@ import dao.ProductDao;
 @Service
 @Transactional
 public class ProductServiceImpl implements ProductService{
-    @Autowired
-    private ProductDao product;
+
     @Override
-    public List<Sanpham> getListProduct(){
-        return new ProductDaoImpl().getListProduct();
+    public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
+            int offset, String sortByName, String sortByPrice, int sortType) {
+        return new ProductDaoImpl().getListProduct(proName, typePrice, limit,
+                offset, sortByName, sortByPrice, sortType);
     }
-    
+
     @Override
-    public Sanpham DetailSanPham(int id) {
-        return new ProductDaoImpl().getDetailProduct(id);
+    public Sanpham getProductByID(int id) {
+        return new ProductDaoImpl().getProductByID(id);
     }
 
     @Override
@@ -51,4 +52,30 @@ public class ProductServiceImpl implements ProductService{
     public List<Sanpham> getListProductByCategoryID(int categoryID) {
         return new ProductDaoImpl().getListProductByCategoryID(categoryID);
     }
+
+    @Override
+    public List<Sanpham> getListNewProduct(int maTT) {
+        return new ProductDaoImpl().getListNewProduct(maTT);
+    }
+
+    @Override
+    public List<Sanpham> getListProductHotByDM(int maTT, int limit, int idDM) {
+        return new ProductDaoImpl().getListProductHotByDM(maTT, limit, idDM);
+    }
+
+    @Override
+    public int getMaDMBySP(int idSP) {
+        return new ProductDaoImpl().getMaDMBySP(idSP);
+    }
+
+    @Override
+    public List<Sanpham> getLimitProByIdCat(int idCat, int limit, int idPrePro) {
+        return new ProductDaoImpl().getLimitProByIdCat(idCat, limit, idPrePro);
+    }
+
+    @Override
+    public int getTotalProduct(int price, String name) {
+        return new ProductDaoImpl().getTotalProduct(price, name);
+    }
+
 }
