@@ -21,8 +21,10 @@ import service.ProductService;
 public class ProductServiceImpl implements ProductService {
 
     @Override
-    public List<Sanpham> getListProduct() {
-        return new ProductDaoImpl().getListProduct();
+    public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
+            int offset, String sortByName, String sortByPrice, int sortType) {
+        return new ProductDaoImpl().getListProduct(proName, typePrice, limit,
+                offset, sortByName, sortByPrice, sortType);
     }
 
     @Override
@@ -63,6 +65,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Sanpham> getLimitProByIdCat(int idCat, int limit, int idPrePro) {
         return new ProductDaoImpl().getLimitProByIdCat(idCat, limit, idPrePro);
+    }
+
+    @Override
+    public int getTotalProduct(int price, String name) {
+        return new ProductDaoImpl().getTotalProduct(price, name);
     }
 
 }

@@ -24,28 +24,14 @@
                 </div>
             </div>
             <div class="container">
-               
-                <!--                // Nội dung phần checkout-->
-                <div class="">
-                    <form method="POST" action="${pageContext.request.contextPath}/shopping/seveOrder">
-                        <table class="table table-bordered table-condensed">
-                            <tr>
-                            <input name="nameCustomer" placeholder="Họ và tên"/>
-                            </tr>
-                            <tr>
-                            <input name="phoneCustomer" placeholder="Số điện thoại"/>
-                            </tr>
-                            <tr>
-                            <input name="emailCustomer" placeholder="Email"/>
-                            </tr>
-                            <tr>
-                            <input name="addressCustomer" placeholder="Địa chỉ"/>
-                            </tr>
-                        </table>  
-                        <input type="submit" value="Gửi">
-                    </form>
+                <div class="col-md-1"></div>
+<!--                // Nội dung phần checkout-->
+                <div class="col-md-10">
+                    <table>
+                        
+                    </table>   
                 </div>
-                
+                <div class="col-md-1"></div>
             </div>
         <jsp:include page="footer.jsp"></jsp:include>
     </body>

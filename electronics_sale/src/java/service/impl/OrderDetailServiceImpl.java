@@ -5,26 +5,10 @@
  */
 package service.impl;
 
-import dao.OrderDetailDao;
-import javax.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import pojo.Chitiethd;
-
 /**
  *
  * @author tranv
  */
-@Service
-@Transactional
-public class OrderDetailServiceImpl implements OrderDetailDao{
-
-    @Autowired
-    OrderDetailDao orderDetailDao;
-    
-    @Override
-    public boolean saveOrderDetailDao(Chitiethd ct) {
-        return orderDetailDao.saveOrderDetailDao(ct);
-    }
+public class OrderDetailServiceImpl {
     
 }

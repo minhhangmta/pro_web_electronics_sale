@@ -5,12 +5,10 @@
  */
 package dao;
 
-import pojo.Chitiethd;
-
 /**
  *
  * @author tranv
  */
 public interface OrderDetailDao {
-    public boolean saveOrderDetailDao(Chitiethd ct);   
+    
 }

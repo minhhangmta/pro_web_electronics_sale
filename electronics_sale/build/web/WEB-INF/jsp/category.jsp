@@ -19,7 +19,13 @@
                             <c:if test="${list.maDmcha==0}">
                                 <c:set value="${list.maDm}" var="maCha"></c:set>
                                     <!-- get ten danh muc cha -->
-                                    <li><p>${list.tendanhmuc}</p></li>
+                                    <!--<li><p>{list.tendanhmuc}</p></li>-->
+                                    <h4 class="panel-title asd" style="padding-bottom: 12px;">
+                                        <a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#" aria-expanded="true" aria-controls="collapseOne">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
+                                            ${list.tendanhmuc}
+                                    </a>
+                                </h4>
                                 <!-- -->
 
                                 <!-- get ten danh muc con -->

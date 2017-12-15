@@ -13,6 +13,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import service.impl.CategoryServiceImpl;
+import service.CategoryService;
 import service.ProductService;
 
 /**
@@ -27,6 +29,8 @@ public class DetailProductController {
 
     @Autowired
     ProductService productService;
+//    @Autowired
+//    CategoryService categoryService;
 
     @RequestMapping(value = "/product-detail/{id}", method = RequestMethod.GET)
     public String productDetail(ModelMap mm, @PathVariable("id") int productID) {
@@ -37,4 +41,12 @@ public class DetailProductController {
         return "product-detail";
     }
 
+    /*
+    @RequestMapping("/product/{id}")
+    public String ListProductByCategoryID(ModelMap mm, @PathVariable("id") int categoryID) {
+        mm.put("listSanPham", productService.getListProductByCategoryID(categoryID));
+        mm.put("listDanhMuc", categoryService.getListDanhMuc());
+        return "product";
+    }
+     */
 }

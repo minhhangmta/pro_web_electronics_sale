@@ -18,7 +18,7 @@
             <div class="breadcrumb_dress">
                 <div class="container">
                     <ul>
-                        <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
+                        <li><a href="${pageContext.request.contextPath}/index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
                         <li>Product Detail</li>
                     </ul>
                 </div>
@@ -33,12 +33,12 @@
                                 <li data-thumb="<c:url value="${sanPham.anh}"/>">
                                 <div class="thumb-image"> <img src="<c:url value="${sanPham.anh}"/>" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
-                            <li data-thumb="<c:url value="${sanPham.anh}"/>">
+<!--                            <li data-thumb="<c:url value="${sanPham.anh}"/>">
                                 <div class="thumb-image"> <img src="<c:url value="${sanPham.anh}"/>" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
                             <li data-thumb="<c:url value="${sanPham.anh}"/>">
                                 <div class="thumb-image"> <img src="<c:url value="${sanPham.anh}"/>" data-imagezoom="true" class="img-responsive" alt=""> </div>
-                            </li> 
+                            </li> -->
                         </ul>
                     </div>
                     <!-- flexslider -->

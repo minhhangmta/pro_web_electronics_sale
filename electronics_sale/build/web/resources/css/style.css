@@ -100,7 +100,7 @@ label.icon-search {
 	-webkit-transition:all 0.3s ease-out;
 }
 .search_form input[type='text']{
-	width: 380px;
+	width: 365px;
     padding: 10px;
     outline: none;
     font-size: 14px;

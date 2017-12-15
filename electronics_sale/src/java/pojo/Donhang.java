@@ -26,13 +26,7 @@ public class Donhang  implements java.io.Serializable {
 
     public Donhang() {
     }
-    public Donhang( String hoten, Date ngaytao, String sodienthoai, String email, String diachi) {
-       this.hoten = hoten;
-       this.ngaytao = ngaytao;
-       this.sodienthoai = sodienthoai;
-       this.email = email;
-       this.diachi = diachi;
-    }
+
     public Donhang(Khachhang khachhang, Trangthai trangthai, String hoten, Date ngaytao, String sodienthoai, String email, String diachi, Float tongtien, Float thanhtoan, Set chitiethds) {
        this.khachhang = khachhang;
        this.trangthai = trangthai;
