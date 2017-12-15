@@ -34,6 +34,11 @@ target/*
 ehthumbs.db
 Thumbs.db
 /target/
-/electronics_sale/dist/
-/electronics_sale/build/
-private.xml
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

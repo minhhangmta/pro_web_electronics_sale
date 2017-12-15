@@ -18,16 +18,16 @@ import service.ProductService;
  */
 @Service
 @Transactional
-public class ProductServiceImpl implements ProductService{
-    
+public class ProductServiceImpl implements ProductService {
+
     @Override
-    public List<Sanpham> getListProduct(){
+    public List<Sanpham> getListProduct() {
         return new ProductDaoImpl().getListProduct();
     }
-    
+
     @Override
-    public Sanpham getDetailSanPham(int id) {
-        return new ProductDaoImpl().getDetailProduct(id);
+    public Sanpham getProductByID(int id) {
+        return new ProductDaoImpl().getProductByID(id);
     }
 
     @Override
@@ -44,4 +44,25 @@ public class ProductServiceImpl implements ProductService{
     public List<Sanpham> getListProductByCategoryID(int categoryID) {
         return new ProductDaoImpl().getListProductByCategoryID(categoryID);
     }
+
+    @Override
+    public List<Sanpham> getListNewProduct(int maTT) {
+        return new ProductDaoImpl().getListNewProduct(maTT);
+    }
+
+    @Override
+    public List<Sanpham> getListProductHotByDM(int maTT, int limit, int idDM) {
+        return new ProductDaoImpl().getListProductHotByDM(maTT, limit, idDM);
+    }
+
+    @Override
+    public int getMaDMBySP(int idSP) {
+        return new ProductDaoImpl().getMaDMBySP(idSP);
+    }
+
+    @Override
+    public List<Sanpham> getLimitProByIdCat(int idCat, int limit, int idPrePro) {
+        return new ProductDaoImpl().getLimitProByIdCat(idCat, limit, idPrePro);
+    }
+
 }

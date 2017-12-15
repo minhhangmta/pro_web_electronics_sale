@@ -30,4 +30,9 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryDao.getListDanhMuc();
     }
 
+    @Override
+    public List<Danhmuc> getListDanhMucCha() {
+        return categoryDao.getListDanhMucCha();
+    }
+
 }
