@@ -14,7 +14,8 @@ import pojo.Sanpham;
  */
 public interface ProductService {
 
-    public List<Sanpham> getListProduct();
+    public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
+            int offset, String sortByName, String sortByPrice, String sortType);
 
     public List<Sanpham> getListProductByCategoryID(int categoryID);
 

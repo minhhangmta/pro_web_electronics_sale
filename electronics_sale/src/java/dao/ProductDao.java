@@ -13,7 +13,8 @@ import pojo.Sanpham;
  * @author tranv
  */
 public interface ProductDao {
-    public List<Sanpham> getListProduct();
+    public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
+            int offset, String sortByName, String sortByPrice, String sortType);
     public List<Sanpham> getListProductByCategoryID(int categoryID);
     public Sanpham getProductByID(int id);
     public List<Sanpham> getListNewProduct(int maTT);

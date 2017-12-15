@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import service.CategoryService;
 import service.ProductService;
+import util.Common;
 
 /**
  *
@@ -37,12 +38,26 @@ public class ProductController {
         mm.put("listDanhMuc", categoryService.getListDanhMuc());
         return "product";
     }
-    
-    
+
     @RequestMapping(value = "/product", method = RequestMethod.GET)
     public String product(ModelMap mm) {
+        return productPost(mm);
+    }
+
+    @RequestMapping(value = "/product", method = RequestMethod.POST)
+    public String productPost(ModelMap mm) {
         mm.put("listDanhMuc", categoryService.getListDanhMuc());
-        mm.put("listSanPham", productService.getListProduct());
+        String proName = "";
+        int typePrice = 0;
+        int limit = 9;
+        int offset = 0;
+        String sortByName = "";
+        String sortByPrice = "";
+        String sortType = "";
+
+        proName = Common.replaceWildcard(proName);
+        mm.put("listSanPham", productService.getListProduct(proName, typePrice,
+                limit, offset, sortByName, sortByPrice, sortType));
         return "product";
     }
 

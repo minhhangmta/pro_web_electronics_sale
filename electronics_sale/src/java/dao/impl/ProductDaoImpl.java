@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 import pojo.Sanpham;
 import util.HibernateUtil;
@@ -23,11 +22,48 @@ import dao.ProductDao;
 public class ProductDaoImpl implements ProductDao {
 
     @Override
-    public List<Sanpham> getListProduct() {
+    public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
+            int offset, String sortByName, String sortByPrice, String sortType) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         ArrayList<Sanpham> list = new ArrayList<>();
         try {
-            Query query = session.createQuery("from Sanpham");
+            StringBuilder hql = new StringBuilder("from Sanpham where tensanpham like :proName");
+            if (typePrice > 0) {
+                switch (typePrice) {
+                    //gia < 100
+                    case 1:
+                        hql.append(" and gia < 100");
+                        break;
+                    //gia 100-500
+                    case 2:
+                        hql.append(" and gia between 100 and 500");
+                        break;
+                    //gia 500-1k
+                    case 3:
+                        hql.append(" and gia between 500 and 1000");
+                        break;
+                    //gia 1k-10k
+                    case 4:
+                        hql.append(" and gia between 1000 and 10000");
+                        break;
+                    //>10k
+                    case 5:
+                        hql.append(" and gia >10000");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if ("name".equals(sortType)) {
+                hql.append(" order by tensanpham :sortByName");
+            } else if ("price".equals(sortType)) {
+                hql.append(" order by  gia :sortByPrice");
+            }
+            Query query = session.createQuery(hql.toString());
+            query.setString("proName", "%" + proName + "%");
+            //set LIMIT
+            query.setFirstResult(offset);
+            query.setMaxResults(limit);
             list = (ArrayList<Sanpham>) query.list();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -36,7 +72,6 @@ public class ProductDaoImpl implements ProductDao {
             session.close();
         }
         return list;
-
     }
 
     @Override
@@ -110,8 +145,7 @@ public class ProductDaoImpl implements ProductDao {
         }
         return list;
     }
-    
-    
+
     @Override
     public int getMaDMBySP(int idSP) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -129,13 +163,13 @@ public class ProductDaoImpl implements ProductDao {
         return maDM;
     }
 
-//    public static void main(String[] args) {
-//        List<Sanpham> list = new ProductDaoImpl().getLimitProByIdCat(2, 5);
-//        list.forEach((sanpham) -> {
-//            System.out.println(sanpham.getTensanpham());
-//        });
+    public static void main(String[] args) {
+        List<Sanpham> list = new ProductDaoImpl().getListProduct("", 0, 9, 0, "", "", "");
+        list.forEach((sanpham) -> {
+            System.out.println(sanpham.getTensanpham());
+        });
 //        System.out.println( new ProductDaoImpl().getMaDMBySP(2));
-//    }
+    }
 
     @Override
     public List<Sanpham> getLimitProByIdCat(int idCat, int limit, int idPrePro) {

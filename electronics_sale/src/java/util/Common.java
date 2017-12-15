@@ -5,10 +5,22 @@
  */
 package util;
 
+import java.util.ArrayList;
+import java.util.List;
+import pojo.Sanpham;
+
 /**
  *
  * @author minhh
  */
 public class Common {
-    
+
+    public static String replaceWildcard(String str) {
+        if (!str.isEmpty() && str != null) {
+            str.replaceAll("//", "////");
+            str.replaceAll("%", "//%");
+            str.replaceAll("_", "//_");
+        }
+        return str.trim();
+    }
 }
