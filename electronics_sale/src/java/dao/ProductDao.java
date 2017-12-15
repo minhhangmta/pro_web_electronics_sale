@@ -15,5 +15,9 @@ import pojo.Sanpham;
 public interface ProductDao {
     public List<Sanpham> getListProduct();
     public List<Sanpham> getListProductByCategoryID(int categoryID);
-    public Sanpham getDetailProduct(int id);
+    public Sanpham getProductByID(int id);
+    public List<Sanpham> getListNewProduct(int maTT);
+    public List<Sanpham> getListProductHotByDM(int maTT, int limit, int idDM) ;
+    public int getMaDMBySP(int idSP);
+    public List<Sanpham> getLimitProByIdCat(int idCat, int limit, int idPrePro);
 }  

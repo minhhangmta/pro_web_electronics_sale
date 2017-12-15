@@ -18,23 +18,22 @@
                                 <div class="w3_hs_bottom w3_hs_bottom_sub1">
                                     <ul>
                                         <li>
-                                            <a href="#" data-toggle="modal" data-target="#myModal8"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                                            <a href="${pageContext.request.contextPath}/product-detail/${item.maSp}" data-toggle="modal" data-target="#myModal8"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <h5><a href="single.html">${item.tensanpham}</a></h5> 
+                            <h5><a href="${pageContext.request.contextPath}/product-detail/${item.maSp}">${item.tensanpham}</a></h5> 
                             <div class="simpleCart_shelfItem">
-                                <p><span>$<fmt:formatNumber value="${item.gia}" minFractionDigits="0" maxFractionDigits="0"/></span>
+                                <p>
+                                    <c:if test="${item.sale!=0}">
+                                        <span>$<fmt:formatNumber value="${item.gia}" minFractionDigits="0" maxFractionDigits="0"/></span>
+                                    </c:if>
                                     <i class="item_price">$<fmt:formatNumber value="${item.gia-(item.gia*item.sale/100)}" minFractionDigits="0" maxFractionDigits="0"/></i></p>
-<!--                    <form action="#" method="post">
-                        <input type="hidden" name="cmd" value="_cart" />
-                        <input type="hidden" name="add" value="1" /> 
-                        <input type="hidden" name="w3ls_item" value="Asus Laptop" /> 
-                        <input type="hidden" name="amount" value="880.00"/>   
-                        <button type="submit" class="w3ls-cart">Add to cart</button>
-                    </form>-->
-                    <a href="${pageContext.request.contextPath}/shopping/cart/${item.maSp}"><button class="w3ls-cart">Add to cart</button></a>                            </div> 
+                               
+                                <a href="${pageContext.request.contextPath}/shopping/cart/${item.maSp}">
+                                    <button class="w3ls-cart">Add to cart</button></a>               
+                            </div> 
                             <div class="mobiles_grid_pos">
                                 <h6>new</h6>
                             </div>

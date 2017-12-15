@@ -57,29 +57,104 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
-    public Sanpham getDetailProduct(int id) {
-        Session session =HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction=null;
-        try{
-            transaction=session.beginTransaction();
-            Query query=(Query)session.createQuery("from Sanpham where maSp=:id");
+    public Sanpham getProductByID(int id) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Sanpham sp = new Sanpham();
+        try {
+            Query query = (Query) session.createQuery("from Sanpham where ma_sp=:id");
             query.setInteger("id", id);
-            Sanpham sp=(Sanpham) query.uniqueResult();
-            transaction.commit();
-            return sp;
-        }
-        catch(Exception ex){
-            if(transaction!=null){
-                transaction.rollback();
-            }
+            sp = (Sanpham) query.uniqueResult();
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }
-        finally{
+        } finally {
             session.flush();
             session.close();
         }
-        return null;
+        return sp;
     }
 
+    @Override
+    public List<Sanpham> getListNewProduct(int maTT) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        ArrayList<Sanpham> list = new ArrayList<>();
+        try {
+            Query query = session.createQuery("from Sanpham where ma_tt=:maTT");
+            query.setInteger("maTT", maTT);
+            list = (ArrayList<Sanpham>) query.list();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return list;
+    }
+
+    @Override
+    public List<Sanpham> getListProductHotByDM(int maTT, int limit, int idDM) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        ArrayList<Sanpham> list = new ArrayList<>();
+        try {
+            Query query = session.createQuery("from Sanpham where ma_tt=:maTT and ma_dm=:idDM");
+            query.setInteger("maTT", maTT);
+            query.setInteger("idDM", idDM);
+            //set LIMIT
+            query.setFirstResult(0);
+            query.setMaxResults(limit);
+            list = (ArrayList<Sanpham>) query.list();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return list;
+    }
     
+    
+    @Override
+    public int getMaDMBySP(int idSP) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        int maDM = 0;
+        try {
+            Query query = (Query) session.createQuery("select dm.maDm from Sanpham sp inner join sp.danhmuc dm where sp.maSp=:idSP");
+            query.setInteger("idSP", idSP);
+            maDM = (Integer) query.uniqueResult();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return maDM;
+    }
+
+//    public static void main(String[] args) {
+//        List<Sanpham> list = new ProductDaoImpl().getLimitProByIdCat(2, 5);
+//        list.forEach((sanpham) -> {
+//            System.out.println(sanpham.getTensanpham());
+//        });
+//        System.out.println( new ProductDaoImpl().getMaDMBySP(2));
+//    }
+
+    @Override
+    public List<Sanpham> getLimitProByIdCat(int idCat, int limit, int idPrePro) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        ArrayList<Sanpham> list = new ArrayList<>();
+        try {
+            Query query = session.createQuery("from Sanpham where ma_dm=:idCat and ma_sp!=:idPrePro");
+            query.setInteger("idCat", idCat);
+            query.setInteger("idPrePro", idPrePro);
+            //set LIMIT
+            query.setFirstResult(0);
+            query.setMaxResults(limit);
+            list = (ArrayList<Sanpham>) query.list();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return list;
+    }
 }

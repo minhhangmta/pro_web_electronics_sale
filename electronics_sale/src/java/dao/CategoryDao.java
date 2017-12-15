@@ -19,4 +19,5 @@ public interface CategoryDao {
     @Transactional
     public List<Danhmuc> getListDanhMuc();
     
+     public List<Danhmuc> getListDanhMucCha();
 }
