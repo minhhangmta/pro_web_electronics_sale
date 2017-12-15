@@ -18,5 +18,8 @@ public interface CategoryDao {
 
     @Transactional
     public List<Danhmuc> getListDanhMuc();
-    
+    public int insertCategory(Danhmuc cate);
+    public int editCategory(Danhmuc cate);
+    public int DeleteCategory(int id);
+    public Danhmuc getCategoryByID(int id);
 }
