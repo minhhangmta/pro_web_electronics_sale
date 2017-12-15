@@ -97,7 +97,7 @@
                             <li >
                                 <a href="${pageContext.request.contextPath}/product" >Products</a>
                             </li>
-                            <li><a href="about.html">About Us</a></li> 
+                            <li><a href="${pageContext.request.contextPath}/about">About Us</a></li> 
                             <li class="w3pages">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     Pages <span class="caret"></span>

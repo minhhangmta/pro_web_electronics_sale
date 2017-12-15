@@ -51,30 +51,50 @@
             </c:forEach>
         </div>
         <div class="clearfix"></div>
-        <div class="zui-pager small">
-            <ol class="btn-group">
-                <li class="btn-group__item">
-                    <i class="i-chevron-left"></i>
-                </li>
-                <li class="btn-group__item">
-                    <div class="btn btn--action"><span>1</span><span>of</span><span>${total}</span><i class="i-caret-down"></i>
-                        <select class="select-overlay">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
-                    </div>
-                </li>
-                <li class="btn-group__item">
-                    <i class="i-chevron-right"></i>
-                </li>
-            </ol>
-            <form class="zui-pager__input">
-                <input type="text">
-            </form>
+
+        <div class="col-md-6 page_1 agileits-w3layouts" style="
+             padding-left: 50px;
+             margin-left: 250px;
+             margin-right: 200px;
+             padding-right: 50px;
+             margin-top: 50px;
+             ">
+
+            <nav>
+                <ul class="pagination">
+                    <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                </ul>
+            </nav>
+
         </div>
+        <!--        <div class="zui-pager small">
+                    <ol class="btn-group">
+                        <li class="btn-group__item">
+                            <i class="i-chevron-left"></i>
+                        </li>
+                        <li class="btn-group__item">
+                            <div class="btn btn--action"><span>1</span><span>of</span><span>${total}</span><i class="i-caret-down"></i>
+                                <select class="select-overlay">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </li>
+                        <li class="btn-group__item">
+                            <i class="i-chevron-right"></i>
+                        </li>
+                    </ol>
+                    <form class="zui-pager__input">
+                        <input type="text">
+                    </form>
+                </div>-->
     </body>
 </html>
