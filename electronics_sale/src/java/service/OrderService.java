@@ -12,5 +12,6 @@ import pojo.Donhang;
  * @author tranv
  */
 public interface OrderService {
-    public Donhang OrderService();
+    public boolean saveOrder(Donhang donhang);
+    public int getIdOrder(Donhang donhang);
 }

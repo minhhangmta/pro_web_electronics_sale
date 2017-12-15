@@ -31,7 +31,7 @@ public class ContactDaoImpl implements ContactDao{
             Trangthai trangthai=new Trangthai();
             trangthai.setMaTt(1);
             contact.setTrangthai(trangthai);
-            session.save(lh);
+            session.save(contact);
             transaction.commit();
             return true;
         } catch (Exception ex) {
@@ -56,7 +56,7 @@ public class ContactDaoImpl implements ContactDao{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 //    public static void main(String[] args) {
-//        Lienhe lh=new Lienhe("Đỗ Văn Phong","vietchucmta11@gmail.com","0987711234","abchhhhhhh");
+//        Lienhe lh=new Lienhe("Đỗ Văn Phong","vietchucmta11@gmail.com","0987711234","anh yêu em");
 //        boolean x = new ContactDaoImpl().insertContact(lh);
 //        System.out.println(x);
 //    }
