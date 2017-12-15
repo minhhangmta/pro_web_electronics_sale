@@ -42,20 +42,20 @@ public class OrderDetailDaoImpl implements OrderDetailDao{
         }
         return false;
     }
-    public static void main(String arg[]){
-        OrderDaoImpl orderDaoImpl= new OrderDaoImpl();
-        Donhang donhang= new Donhang("Trần Việt Chức", new Date(),"098","vietchucmta11@gmail.com","vt-vp");
-        Donhang dh= new Donhang();
-        dh.setMaHd(orderDaoImpl.getIdOrder(donhang));
-        Sanpham sp=new Sanpham();
-        sp= new ProductDaoImpl().getDetailProduct(8);
-        Chitiethd ct= new Chitiethd();
-        ct.setDonhang(dh);
-        ct.setSanpham(sp);
-        ct.setSoluong(10);
-        ct.setTongtien(sp.getGia()*10);
-        ct.setThanhtien(sp.getGia()*10-sp.getGia()*10*sp.getSale()/100);
-        boolean x= new OrderDetailDaoImpl().saveOrderDetailDao(ct);
-        System.out.println(""+x);
-    }
+//    public static void main(String arg[]){
+//        OrderDaoImpl orderDaoImpl= new OrderDaoImpl();
+//        Donhang donhang= new Donhang("Trần Việt Chức", new Date(),"098","vietchucmta11@gmail.com","vt-vp");
+//        Donhang dh= new Donhang();
+//        dh.setMaHd(orderDaoImpl.getIdOrder(donhang));
+//        Sanpham sp=new Sanpham();
+//        sp= new ProductDaoImpl().getProductByID(8);
+//        Chitiethd ct= new Chitiethd();
+//        ct.setDonhang(dh);
+//        ct.setSanpham(sp);
+//        ct.setSoluong(10);
+//        ct.setTongtien(sp.getGia()*10);
+//        ct.setThanhtien(sp.getGia()*10-sp.getGia()*10*sp.getSale()/100);
+//        boolean x= new OrderDetailDaoImpl().saveOrderDetailDao(ct);
+//        System.out.println(""+x);
+//    }
 }
