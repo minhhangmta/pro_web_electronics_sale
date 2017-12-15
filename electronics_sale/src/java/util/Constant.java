@@ -11,4 +11,6 @@ package util;
  */
 public class Constant {
     public static final int TRANGTHAI_NEW = 1;
+    public static final int TRANGTHAI_HOT = 4;
+    public static final int LIMIT_HOT=3;
 }

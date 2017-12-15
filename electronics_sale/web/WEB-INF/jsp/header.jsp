@@ -22,6 +22,7 @@
         <!-- //font-awesome icons -->
         <!-- js -->
         <script src="<c:url value="/resources/js/jquery-3.2.1.min.js"/>"type="text/javascript"></script>
+        <script src="<c:url value="/resources/js/myscript.js"/>"type="text/javascript"></script>
         <link href="stylesheet" href="<c:url value="/resorces/css/jquery.countdown.css"/>" /> <!-- countdown --> 
         <!-- //js -->  
         <!-- web fonts --> 
@@ -30,12 +31,12 @@
         <!-- //web fonts -->  
         <!-- start-smooth-scrolling -->
         <script type="text/javascript">
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
-                });
-            });
+//            jQuery(document).ready(function ($) {
+//                $(".scroll").click(function (event) {
+//                    event.preventDefault();
+//                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+//                });
+//            });
         </script>
         <!-- //end-smooth-scrolling --> 
     </head> 

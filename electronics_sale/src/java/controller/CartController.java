@@ -38,13 +38,13 @@ public class CartController {
     public String cart(@PathVariable(value = "id") int id, ModelMap mm, HttpSession session) {
         if (session.getAttribute("cart") == null) {
             List<Item> cart = new ArrayList<Item>();
-            cart.add(new Item(this.ps.DetailSanPham(id), 1));  // nếu cart rỗng thì thêm vào cart
+            cart.add(new Item(this.ps.getProductByID(id), 1));  // nếu cart rỗng thì thêm vào cart
             session.setAttribute("cart", cart);
         } else {
             List<Item> cart = (List<Item>) session.getAttribute("cart");
             int index = isExisting(id, session);
             if (index == -1) {
-                cart.add(new Item(this.ps.DetailSanPham(id), 1));
+                cart.add(new Item(this.ps.getProductByID(id), 1));
             } else {
                 int quantity = cart.get(index).getQuantity() + 1; // nếu sản phẩm đã có trong cart thì tăng số lượng lên
                 cart.get(index).setQuantity(quantity);

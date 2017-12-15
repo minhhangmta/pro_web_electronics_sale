@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import service.CategoryService;
 import service.ProductService;
@@ -34,6 +35,14 @@ public class ProductController {
     public String ListProductByCategoryID(ModelMap mm, @PathVariable("id") int categoryID) {
         mm.put("listSanPham", productService.getListProductByCategoryID(categoryID));
         mm.put("listDanhMuc", categoryService.getListDanhMuc());
+        return "product";
+    }
+    
+    
+    @RequestMapping(value = "/product", method = RequestMethod.GET)
+    public String product(ModelMap mm) {
+        mm.put("listDanhMuc", categoryService.getListDanhMuc());
+        mm.put("listSanPham", productService.getListProduct());
         return "product";
     }
 
