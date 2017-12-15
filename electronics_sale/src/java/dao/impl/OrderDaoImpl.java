@@ -76,13 +76,13 @@ public class OrderDaoImpl implements OrderDao{
 
     }
     
-    public static void main(String arg[]){
-        
-        OrderDaoImpl or= new OrderDaoImpl();
-        Donhang dh;
-        dh = new Donhang("Trần Việt Chức", new Date(),"0980","vietchucmta11@gmail.com","vt-vp");
-        //boolean x= or.saveOrder(dh);
-        int x=or.getIdOrder(dh);
-        System.out.println(""+x);
-    }
+//    public static void main(String arg[]){
+//        
+//        OrderDaoImpl or= new OrderDaoImpl();
+//        Donhang dh;
+//        dh = new Donhang("Trần Việt Chức", new Date(),"0980","vietchucmta11@gmail.com","vt-vp");
+//        //boolean x= or.saveOrder(dh);
+//        int x=or.getIdOrder(dh);
+//        System.out.println(""+x);
+//    }
 }
