@@ -27,7 +27,7 @@
                
                 <!--                // Nội dung phần checkout-->
                 <div class="">
-                    <form method="POST" action="${pageContext.request.contextPath}/shopping/seveOrder">
+                    <form method="POST" action="${pageContext.request.contextPath}/seveOrder" commandName="donhang">
                         <table class="table table-bordered table-condensed">
                             <tr>
                             <input name="nameCustomer" placeholder="Họ và tên"/>

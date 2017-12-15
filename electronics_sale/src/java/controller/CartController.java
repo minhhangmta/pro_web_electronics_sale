@@ -90,46 +90,45 @@ public class CartController {
         session.setAttribute("cart", cart);
         return "cart";
     }
-    
-    // checkout đơn hàng
-    @RequestMapping(value="/checkout", method = RequestMethod.GET)
-    public String checkout(){
-        return "checkout";
-    }
-    @Autowired
-    OrderService orderService;
-    
-    @Autowired
-    OrderDetailService orderDetailService;
-    
-    @RequestMapping(value = "/seveOrder",method = RequestMethod.POST)
-    public String checkout(HttpSession session,ModelMap mm, HttpServletRequest request){
-        List<Item> cart= (List<Item>) session.getAttribute("cart");
-        Donhang donhang=new Donhang();
-        donhang.setHoten(request.getParameter("nameCustomer"));
-        donhang.setNgaytao(new Date());
-        donhang.setSodienthoai(request.getParameter("phoneCustomer"));
-        donhang.setDiachi(request.getParameter("addressCustomer"));
-        donhang.setEmail(request.getParameter("emailCustomer"));
-        //donhang.setThanhtoan();
-        orderService.saveOrder(donhang);
-        int i= orderService.getIdOrder(donhang);
-        if(i!=-1){
-            for(Item item:cart){
-                Donhang dh= new Donhang();
-                dh.setMaHd(i);
-                Chitiethd ct= new Chitiethd();
-                ct.setSanpham(item.getSanpham());
-                ct.setSoluong(item.getQuantity());
-                ct.setDonhang(dh);
-                ct.setTongtien(item.getSanpham().getGia()*item.getQuantity());
-                ct.setThanhtien(item.getSanpham().getGia()*item.getQuantity()-item.getSanpham().getGia()*item.getQuantity()*item.getSanpham().getSale()/100);
-                orderDetailService.saveOrderDetailService(ct);
-            }
-        }
-        // remove cart
-        session.removeAttribute("cart");
-        
-        return "success-page";
-    }
+//    
+//    @Autowired
+//    OrderService orderService;
+//    
+//    @Autowired
+//    OrderDetailService orderDetailService;
+//    // checkout đơn hàng
+//    @RequestMapping(value="/checkout", method = RequestMethod.GET)
+//    public String checkout(){
+//        return "checkout";
+//    }
+//    
+//    @RequestMapping(value = "/seveOrder",method = RequestMethod.POST)
+//    public String checkout(HttpSession session,ModelMap mm, HttpServletRequest request){
+//        List<Item> cart= (List<Item>) session.getAttribute("cart");
+//        Donhang donhang=new Donhang();
+//        donhang.setHoten(request.getParameter("nameCustomer"));
+//        donhang.setNgaytao(new Date());
+//        donhang.setSodienthoai(request.getParameter("phoneCustomer"));
+//        donhang.setDiachi(request.getParameter("addressCustomer"));
+//        donhang.setEmail(request.getParameter("emailCustomer"));
+//        //donhang.setThanhtoan();
+//        orderService.saveOrder(donhang);
+//        int i= orderService.getIdOrder(donhang);
+//        if(i!=-1){
+//            for(Item item:cart){
+//                Donhang dh= new Donhang();
+//                dh.setMaHd(i);
+//                Chitiethd ct= new Chitiethd();
+//                ct.setSanpham(item.getSanpham());
+//                ct.setSoluong(item.getQuantity());
+//                ct.setDonhang(dh);
+//                ct.setTongtien(item.getSanpham().getGia()*item.getQuantity());
+//                ct.setThanhtien(item.getSanpham().getGia()*item.getQuantity()-item.getSanpham().getGia()*item.getQuantity()*item.getSanpham().getSale()/100);
+//                orderDetailService.saveOrderDetailService(ct);
+//            }
+//        }
+//        // remove cart
+//        session.removeAttribute("cart");    
+//        return "success-page";
+//    }
 }
