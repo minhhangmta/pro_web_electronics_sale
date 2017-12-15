@@ -14,6 +14,9 @@ import pojo.Taikhoan;
  */
 public interface AccountService {
     public Taikhoan login(String userName, String passWord);
+    public boolean existUser(String username, String password);
     public List<Taikhoan> getListAccount();
     public int insertAccount(Taikhoan account);
+    public int editAccount(Taikhoan account);
+    public Taikhoan getAccountByID(int id);
 }

@@ -14,6 +14,11 @@ import pojo.Taikhoan;
  */
 public interface AccountDao {
     public Taikhoan login(String userName,String passWord);
+    public boolean existUser(String userName,String passWord);
     public List<Taikhoan> getListAccount();
     public int insertAccount(Taikhoan account);
+    public int editAccount(Taikhoan account);
+    public int DeleteAccount(int id);
+    public Taikhoan getAccountByID(int id);
+    
 }

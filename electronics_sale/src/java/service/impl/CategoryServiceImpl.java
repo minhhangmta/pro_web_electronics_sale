@@ -19,18 +19,31 @@ import service.CategoryService;
  *
  * @author tranv
  */
-@Service 
+@Service
 @Transactional
 public class CategoryServiceImpl implements CategoryService {
+
     @Autowired
     CategoryDao categoryDao;
-    
-    @Override    
+
+    @Override
     public List<Danhmuc> getListDanhMuc() {
         return categoryDao.getListDanhMuc();
     }
 
     @Override
+    public int insertCategory(Danhmuc dm) {
+        return categoryDao.insertCategory(dm);
+    }
+     @Override
+     public int editCategory(Danhmuc dm){
+         return categoryDao.editCategory(dm);
+     }
+     @Override
+     public Danhmuc getCategoryByID(int id){
+        return categoryDao.getCategoryByID(id);
+    }
+     @Override
     public List<Danhmuc> getListDanhMucCha() {
         return categoryDao.getListDanhMucCha();
     }

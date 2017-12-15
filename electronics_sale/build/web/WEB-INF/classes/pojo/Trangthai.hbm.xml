@@ -19,7 +19,7 @@
         </set>
         <set name="donhangs" table="donhang" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="matrangthai" />
+                <column name="ma_tt" />
             </key>
             <one-to-many class="pojo.Donhang" />
         </set>

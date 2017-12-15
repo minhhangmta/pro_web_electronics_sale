@@ -5,12 +5,15 @@
  */
 package service.impl;
 
+import dao.AccountDao;
 import dao.impl.ProductDaoImpl;
 import java.util.List;
 import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pojo.Sanpham;
 import service.ProductService;
+import dao.ProductDao;
 
 /**
  *
@@ -18,7 +21,7 @@ import service.ProductService;
  */
 @Service
 @Transactional
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
@@ -33,10 +36,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Sanpham InsertSanPham() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int InsertSanPham(Sanpham sanpham) {
+       return product.addProduct(sanpham);
     }
-
+    @Override
+    public int EditSanPham(Sanpham sanpham) {
+       return product.editProduct(sanpham);
+    }
     @Override
     public Sanpham DeleteSanPham() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

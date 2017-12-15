@@ -19,8 +19,14 @@ public interface ProductService {
 
     public List<Sanpham> getListProductByCategoryID(int categoryID);
 
+    public Sanpham DetailSanPham(int id);
+    
+    public int InsertSanPham(Sanpham sanpham);
+    
+    public int EditSanPham(Sanpham sanpham);
+    
     public Sanpham getProductByID(int id);
-
+    
     public Sanpham InsertSanPham();
 
     public Sanpham DeleteSanPham();

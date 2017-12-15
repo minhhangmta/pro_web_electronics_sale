@@ -14,5 +14,8 @@ import pojo.Danhmuc;
  */
 public interface CategoryService {
     public List<Danhmuc> getListDanhMuc();
-     public List<Danhmuc> getListDanhMucCha();
+    public int insertCategory(Danhmuc dm);
+    public int editCategory(Danhmuc dm);
+    public Danhmuc getCategoryByID(int id);
+    public List<Danhmuc> getListDanhMucCha();
 }
