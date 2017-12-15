@@ -49,10 +49,10 @@
             <div class="container">
                 <div class="w3l_login">
                     <a href="${pageContext.request.contextPath}/Login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-                   
+
                 </div>
                 <div class="w3l_login">
-                     <a href="${pageContext.request.contextPath}/Logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+                    <a href="${pageContext.request.contextPath}/Logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
                 </div>
                 <div class="w3l_logo">
                     <h1><a href="${pageContext.request.contextPath}/index">Electronic Store<span>Your stores. Your place.</span></a></h1>
@@ -62,7 +62,7 @@
                     <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
                     <div class="search_form">
                         <form action="${pageContext.request.contextPath}/product" method="post">
-                            <input type="text" name="Search" placeholder="Search...">
+                            <input value="${proName}" type="text" name="proName" placeholder="Search...">
                             <input type="submit" value="Send">
                         </form>
                     </div>

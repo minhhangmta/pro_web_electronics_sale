@@ -57,7 +57,7 @@
                     <i class="i-chevron-left"></i>
                 </li>
                 <li class="btn-group__item">
-                    <div class="btn btn--action"><span>1</span><span>of</span><span>40</span><i class="i-caret-down"></i>
+                    <div class="btn btn--action"><span>1</span><span>of</span><span>${total}</span><i class="i-caret-down"></i>
                         <select class="select-overlay">
                             <option value="1">1</option>
                             <option value="2">2</option>

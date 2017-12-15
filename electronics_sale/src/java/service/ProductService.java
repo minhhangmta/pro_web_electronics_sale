@@ -15,7 +15,7 @@ import pojo.Sanpham;
 public interface ProductService {
 
     public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
-            int offset, String sortByName, String sortByPrice, String sortType);
+            int offset, String sortByName, String sortByPrice, int sortType);
 
     public List<Sanpham> getListProductByCategoryID(int categoryID);
 
@@ -31,5 +31,7 @@ public interface ProductService {
 
     public int getMaDMBySP(int idSP);
 
-   public List<Sanpham> getLimitProByIdCat(int idCat, int limit, int idPrePro);
+    public List<Sanpham> getLimitProByIdCat(int idCat, int limit, int idPrePro);
+
+    public int getTotalProduct(int price, String name);
 }

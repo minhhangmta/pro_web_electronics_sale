@@ -33,12 +33,12 @@
                                 <li data-thumb="<c:url value="${sanPham.anh}"/>">
                                 <div class="thumb-image"> <img src="<c:url value="${sanPham.anh}"/>" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
-                            <li data-thumb="<c:url value="${sanPham.anh}"/>">
+<!--                            <li data-thumb="<c:url value="${sanPham.anh}"/>">
                                 <div class="thumb-image"> <img src="<c:url value="${sanPham.anh}"/>" data-imagezoom="true" class="img-responsive" alt=""> </div>
                             </li>
                             <li data-thumb="<c:url value="${sanPham.anh}"/>">
                                 <div class="thumb-image"> <img src="<c:url value="${sanPham.anh}"/>" data-imagezoom="true" class="img-responsive" alt=""> </div>
-                            </li> 
+                            </li> -->
                         </ul>
                     </div>
                     <!-- flexslider -->
