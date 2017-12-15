@@ -14,9 +14,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pojo.Taikhoan;
+import pojo.*;
 import util.Common;
 import service.AccountService;
+import dao.impl.AccountDaoImpl;
 /**
  *
  * @author Phong_Tung
@@ -34,7 +35,11 @@ public class AdLoginController {
     @RequestMapping(value = "/adlogin", method = RequestMethod.POST)
     public String confirmLogin(HttpServletRequest request, HttpServletResponse response,@ModelAttribute("taikhoan") Taikhoan t, ModelMap mm){
          Taikhoan tk = accountService.login(t.getUsername(), t.getPassword());
-        if (tk != null ) {
+         AccountDaoImpl accdao= new AccountDaoImpl();
+         Taikhoan account= accdao.getAccountByUser(t.getPassword());
+         Quyen quyen= account.getQuyen();
+         int ma = quyen.getMaQ();
+        if (tk != null && ma==2) {
             HttpSession session = request.getSession();
             session.setAttribute("account", tk);
              return "adindex";

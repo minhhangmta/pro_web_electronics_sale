@@ -162,7 +162,27 @@ public class AccountDaoImpl implements AccountDao {
         }
         return null;
     }
-
+    public Taikhoan getAccountByUser(String user) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            Query query = (Query) session.createQuery("from Taikhoan where username=:user");
+            query.setString("user", user);
+            Taikhoan sp = (Taikhoan) query.uniqueResult();
+            transaction.commit();
+            return sp;
+        } catch (Exception ex) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            ex.printStackTrace();
+        } finally {
+            session.flush();
+            session.close();
+        }
+        return null;
+    }
     public int DeleteAccount(int id) {
         int check = 0;
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();

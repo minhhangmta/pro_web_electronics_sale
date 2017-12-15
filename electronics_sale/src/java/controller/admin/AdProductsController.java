@@ -35,6 +35,7 @@ import service.*;
 public class AdProductsController {
      @Autowired
     ProductService productService;
+     @Autowired
     CategoryService categoryService;
     @RequestMapping(value = "adproducts", method = RequestMethod.GET)
     public String Product(ModelMap mm){

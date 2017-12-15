@@ -75,9 +75,7 @@
                                 <div class="control-group">
                                     <label class="control-label" for="exampleInputFile">Ảnh</label>
                                     <div class="controls">
-                                        <input type="file" id="exampleInputFile"  name="file">
-                                        <label class="text-danger" ></label>
-                                        <p class="help-block"></p>
+                                        <input type="file"   id="exampleInputFile"  name="file" required="${sp.anh}"  />                          
                                     </div>
                                 </div>
 
@@ -109,16 +107,16 @@
                                     <label class="control-label">Nhà Cung Cấp</label>
                                     <div class="controls">
                                         <select  name="nhacungcap">
-                                          <c:forEach var="item" items="${listNcc}"> 
-                                                    <c:choose> 
-                                                        <c:when test="${item.maNcc == sp.nhacungcap.maNcc}">
-                                                            <option value="${item.maNcc}" selected="true">${item.tennhacc}</option>
-                                                        </c:when>
-                                                        <c:otherwise>
-                                                            <option value="${item.maNcc}">${item.tennhacc}</option>
-                                                        </c:otherwise>
-                                                    </c:choose>                                        
-                                                </c:forEach>
+                                            <c:forEach var="item" items="${listNcc}"> 
+                                                <c:choose> 
+                                                    <c:when test="${item.maNcc == sp.nhacungcap.maNcc}">
+                                                        <option value="${item.maNcc}" selected="true">${item.tennhacc}</option>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <option value="${item.maNcc}">${item.tennhacc}</option>
+                                                    </c:otherwise>
+                                                </c:choose>                                        
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>
@@ -128,15 +126,15 @@
                                     <div class="controls">
                                         <select name="danhmuc" >
                                             <c:forEach var="item" items="${listdanhmuc}"> 
-                                                    <c:choose> 
-                                                        <c:when test="${item.maDm == sp.danhmuc.maDm}">
-                                                            <option value="${item.maDm}" selected="true">${item.tendanhmuc}</option>
-                                                        </c:when>
-                                                        <c:otherwise>
-                                                            <option value="${item.maDm}">${item.tendanhmuc}</option>
-                                                        </c:otherwise>
-                                                    </c:choose>                                        
-                                                </c:forEach>
+                                                <c:choose> 
+                                                    <c:when test="${item.maDm == sp.danhmuc.maDm}">
+                                                        <option value="${item.maDm}" selected="true">${item.tendanhmuc}</option>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <option value="${item.maDm}">${item.tendanhmuc}</option>
+                                                    </c:otherwise>
+                                                </c:choose>                                        
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>
@@ -145,16 +143,16 @@
                                     <label class="control-label">Trạng Thái</label>
                                     <div class="controls">
                                         <select  name="trangthai" >
-                                           <c:forEach var="item" items="${listTT}"> 
-                                                    <c:choose> 
-                                                        <c:when test="${item.maTt == sp.danhmuc.maTt}">
-                                                            <option value="${item.maTt}" selected="true">${item.tentrangthai}</option>
-                                                        </c:when>
-                                                        <c:otherwise>
-                                                            <option value="${item.maTt}">${item.tentrangthai}</option>
-                                                        </c:otherwise>
-                                                    </c:choose>                                        
-                                                </c:forEach>
+                                            <c:forEach var="item" items="${listTT}"> 
+                                                <c:choose> 
+                                                    <c:when test="${item.maTt == sp.trangthai.maTt}">
+                                                        <option value="${item.maTt}" selected="true">${item.tentrangthai}</option>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <option value="${item.maTt}">${item.tentrangthai}</option>
+                                                    </c:otherwise>
+                                                </c:choose>                                        
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>
@@ -162,7 +160,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Mô tả</label>
                                     <div class="controls">
-                                        <textarea  rows="3" value="${sp.mota}" name="mota"></textarea>
+                                        <textarea  rows="3"  name="mota">${sp.mota}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-success">save</button>
                                 </div>
@@ -177,6 +175,6 @@
 
                 <!--end-Footer-part-->
 
-                
+
                 </body>
                 </html>

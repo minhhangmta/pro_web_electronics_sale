@@ -96,9 +96,6 @@ public class AdAccountController {
         switch (t) {
             case 1:
                 return "redirect:/adaccount";
-            case -1:
-                mm.put("msgAccount", "Tài khoản đã tồn tại");
-                return "redirect:/addacount";
             default:
                 mm.put("msgAccountErr", "Không thành công!!!Kiểm tra nhập liệu");
                 return "redirect:/addacount";
