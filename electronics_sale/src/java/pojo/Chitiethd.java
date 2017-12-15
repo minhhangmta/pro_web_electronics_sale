@@ -20,9 +20,12 @@ public class Chitiethd  implements java.io.Serializable {
     }
 
 	
-    public Chitiethd(Donhang donhang, Sanpham sanpham) {
+    public Chitiethd(Donhang donhang, Sanpham sanpham,int soluong, Float tongtien, Float thanhtien) {
         this.donhang = donhang;
         this.sanpham = sanpham;
+        this.soluong=soluong;
+        this.thanhtien=thanhtien;
+        this.tongtien=tongtien;
     }
     public Chitiethd(Donhang donhang, Sanpham sanpham, Integer soluong, Float tongtien, Float thanhtien) {
        this.donhang = donhang;
