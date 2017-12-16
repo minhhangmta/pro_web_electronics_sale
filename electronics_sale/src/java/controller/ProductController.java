@@ -45,7 +45,6 @@ public class ProductController {
     @RequestMapping(value = "/product", method = RequestMethod.GET)
     public String product(ModelMap mm, HttpServletRequest request) {
         String proName = "";
-        int typePrice = 0;
         return productPost(mm, proName, request);
     }
 

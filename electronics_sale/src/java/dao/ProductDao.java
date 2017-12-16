@@ -10,6 +10,7 @@ import pojo.Sanpham;
 
 
 public interface ProductDao {
+    public List<Sanpham> getListProduct();
     public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
             int offset, String sortByName, String sortByPrice, int sortType);
     public List<Sanpham> getListProductByCategoryID(int categoryID);

@@ -13,6 +13,7 @@ import pojo.Sanpham;
  * @author tranv
  */
 public interface ProductService {
+    public List<Sanpham> getListProduct();
 
     public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
             int offset, String sortByName, String sortByPrice, int sortType);

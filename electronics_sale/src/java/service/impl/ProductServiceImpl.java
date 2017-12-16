@@ -23,6 +23,7 @@ import dao.ProductDao;
 @Transactional
 public class ProductServiceImpl implements ProductService{
 
+    
     @Override
     public List<Sanpham> getListProduct(String proName, int typePrice, int limit,
             int offset, String sortByName, String sortByPrice, int sortType) {
@@ -76,6 +77,21 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public int getTotalProduct(int price, String name) {
         return new ProductDaoImpl().getTotalProduct(price, name);
+    }
+
+    @Override
+    public List<Sanpham> getListProduct() {
+         return new ProductDaoImpl().getListProduct();
+    }
+
+    @Override
+    public Sanpham DetailSanPham(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Sanpham InsertSanPham() {
+       
     }
 
 }
