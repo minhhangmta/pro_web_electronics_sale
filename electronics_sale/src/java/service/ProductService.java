@@ -28,7 +28,7 @@ public interface ProductService {
     
     public Sanpham getProductByID(int id);
     
-    public Sanpham InsertSanPham();
+//    public Sanpham InsertSanPham();
 
     public Sanpham DeleteSanPham();
 
