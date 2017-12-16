@@ -39,7 +39,7 @@ public class AdProductsController {
     CategoryService categoryService;
     @RequestMapping(value = "adproducts", method = RequestMethod.GET)
     public String Product(ModelMap mm){
-        mm.put("listSanPham",productService.getListProduct());
+        mm.put("listSanPham",productService.getListProduct("",0,0,0,"","",0));
         return "adproducts";
     }
     @RequestMapping(value = "/xoasanpham/{masanpham}", method = RequestMethod.GET)

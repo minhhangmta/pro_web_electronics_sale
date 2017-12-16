@@ -145,7 +145,8 @@ public class Common {
             session.close();
         }
         return null;
-
+    }
+    
     public static String replaceWildcard(String str) {
         if (!str.isEmpty() && str != null) {
             str.replaceAll("//", "////");
