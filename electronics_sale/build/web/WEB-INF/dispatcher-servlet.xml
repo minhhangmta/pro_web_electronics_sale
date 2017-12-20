@@ -27,7 +27,7 @@
     <mvc:resources mapping="/resources/**" location="/resources/" />
     <mvc:annotation-driven />
     <context:annotation-config/>
-    <bean id="multipartResolver"   
-                 class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/> 
+<!--    <bean id="multipartResolver"   
+                 class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/> -->
     
 </beans>
