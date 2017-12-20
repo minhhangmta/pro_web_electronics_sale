@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 29, 2017 9:53:15 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 2, 2017 3:44:03 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojo.Trangthai" table="trangthai" catalog="web_electronic_sales" optimistic-lock="version">
-        <id name="maTt" type="int">
+        <id name="maTt" type="java.lang.Integer">
             <column name="ma_tt" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="tentrangthai" type="string">
             <column name="tentrangthai" length="50" />
@@ -19,7 +19,7 @@
         </set>
         <set name="donhangs" table="donhang" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="matrangthai" />
+                <column name="ma_tt" />
             </key>
             <one-to-many class="pojo.Donhang" />
         </set>

@@ -1,5 +1,5 @@
 package pojo;
-// Generated Nov 29, 2017 9:53:13 AM by Hibernate Tools 4.3.1
+// Generated Dec 2, 2017 3:44:02 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -16,16 +16,18 @@ public class Nhacungcap  implements java.io.Serializable {
      private String email;
      private String sodienthoai;
      private String diachi;
+     private String anh;
      private Set sanphams = new HashSet(0);
 
     public Nhacungcap() {
     }
 
-    public Nhacungcap(String tennhacc, String email, String sodienthoai, String diachi, Set sanphams) {
+    public Nhacungcap(String tennhacc, String email, String sodienthoai, String diachi, String anh, Set sanphams) {
        this.tennhacc = tennhacc;
        this.email = email;
        this.sodienthoai = sodienthoai;
        this.diachi = diachi;
+       this.anh = anh;
        this.sanphams = sanphams;
     }
    
@@ -63,6 +65,13 @@ public class Nhacungcap  implements java.io.Serializable {
     
     public void setDiachi(String diachi) {
         this.diachi = diachi;
+    }
+    public String getAnh() {
+        return this.anh;
+    }
+    
+    public void setAnh(String anh) {
+        this.anh = anh;
     }
     public Set getSanphams() {
         return this.sanphams;

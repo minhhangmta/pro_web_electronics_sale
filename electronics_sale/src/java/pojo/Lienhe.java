@@ -1,5 +1,5 @@
 package pojo;
-// Generated Nov 29, 2017 9:53:13 AM by Hibernate Tools 4.3.1
+// Generated Dec 2, 2017 3:44:02 AM by Hibernate Tools 4.3.1
 
 
 
@@ -9,31 +9,55 @@ package pojo;
 public class Lienhe  implements java.io.Serializable {
 
 
-     private int maLh;
+     private Integer maLh;
      private Trangthai trangthai;
+     private String hoten;
+
+    public String getHoten() {
+        return hoten;
+    }
+
+    public void setHoten(String hoten) {
+        this.hoten = hoten;
+    }
+
+    public String getSodienthoai() {
+        return sodienthoai;
+    }
+
+    public void setSodienthoai(String sodienthoai) {
+        this.sodienthoai = sodienthoai;
+    }
      private String email;
+     private String sodienthoai;
      private String lienhe;
 
     public Lienhe() {
     }
 
 	
-    public Lienhe(int maLh, String email) {
-        this.maLh = maLh;
+    public Lienhe(String email) {
         this.email = email;
     }
-    public Lienhe(int maLh, Trangthai trangthai, String email, String lienhe) {
-       this.maLh = maLh;
-       this.trangthai = trangthai;
+    public Lienhe( String hoten,String email, String sodienthoai,String lienhe) {
+       this.hoten=hoten;
        this.email = email;
+       this.sodienthoai=sodienthoai;
+       this.lienhe = lienhe;
+    }
+    public Lienhe(Trangthai trangthai, String hoten,String email, String sodienthoai,String lienhe) {
+       this.trangthai = trangthai;
+       this.hoten=hoten;
+       this.email = email;
+       this.sodienthoai=sodienthoai;
        this.lienhe = lienhe;
     }
    
-    public int getMaLh() {
+    public Integer getMaLh() {
         return this.maLh;
     }
     
-    public void setMaLh(int maLh) {
+    public void setMaLh(Integer maLh) {
         this.maLh = maLh;
     }
     public Trangthai getTrangthai() {

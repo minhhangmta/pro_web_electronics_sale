@@ -1,18 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Nov 29, 2017 9:53:15 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Dec 2, 2017 3:44:03 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojo.Lienhe" table="lienhe" catalog="web_electronic_sales" optimistic-lock="version">
-        <id name="maLh" type="int">
+        <id name="maLh" type="java.lang.Integer">
             <column name="ma_lh" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="trangthai" class="pojo.Trangthai" fetch="select">
             <column name="ma_tt" />
         </many-to-one>
+        <property name="hoten" type="string">
+            <column name="hoten" length="50" not-null="true" />
+        </property>
         <property name="email" type="string">
             <column name="email" length="50" not-null="true" />
+        </property>
+        <property name="sodienthoai" type="string">
+            <column name="sodienthoai" length="20" not-null="true" />
         </property>
         <property name="lienhe" type="string">
             <column name="lienhe" length="1000" />

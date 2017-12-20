@@ -1,5 +1,5 @@
 package pojo;
-// Generated Nov 29, 2017 9:53:13 AM by Hibernate Tools 4.3.1
+// Generated Dec 2, 2017 3:44:02 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Trangthai  implements java.io.Serializable {
 
 
-     private int maTt;
+     private Integer maTt;
      private String tentrangthai;
      private Set lienhes = new HashSet(0);
      private Set donhangs = new HashSet(0);
@@ -20,23 +20,18 @@ public class Trangthai  implements java.io.Serializable {
     public Trangthai() {
     }
 
-	
-    public Trangthai(int maTt) {
-        this.maTt = maTt;
-    }
-    public Trangthai(int maTt, String tentrangthai, Set lienhes, Set donhangs, Set sanphams) {
-       this.maTt = maTt;
+    public Trangthai(String tentrangthai, Set lienhes, Set donhangs, Set sanphams) {
        this.tentrangthai = tentrangthai;
        this.lienhes = lienhes;
        this.donhangs = donhangs;
        this.sanphams = sanphams;
     }
    
-    public int getMaTt() {
+    public Integer getMaTt() {
         return this.maTt;
     }
     
-    public void setMaTt(int maTt) {
+    public void setMaTt(Integer maTt) {
         this.maTt = maTt;
     }
     public String getTentrangthai() {

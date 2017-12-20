@@ -34,3 +34,11 @@ target/*
 ehthumbs.db
 Thumbs.db
 /target/
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

@@ -1,5 +1,5 @@
 package pojo;
-// Generated Nov 29, 2017 9:53:13 AM by Hibernate Tools 4.3.1
+// Generated Dec 2, 2017 3:44:02 AM by Hibernate Tools 4.3.1
 
 
 
@@ -9,7 +9,7 @@ package pojo;
 public class Chitiethd  implements java.io.Serializable {
 
 
-     private int maCt;
+     private Integer maCt;
      private Donhang donhang;
      private Sanpham sanpham;
      private Integer soluong;
@@ -20,13 +20,11 @@ public class Chitiethd  implements java.io.Serializable {
     }
 
 	
-    public Chitiethd(int maCt, Donhang donhang, Sanpham sanpham) {
-        this.maCt = maCt;
+    public Chitiethd(Donhang donhang, Sanpham sanpham) {
         this.donhang = donhang;
         this.sanpham = sanpham;
     }
-    public Chitiethd(int maCt, Donhang donhang, Sanpham sanpham, Integer soluong, Float tongtien, Float thanhtien) {
-       this.maCt = maCt;
+    public Chitiethd(Donhang donhang, Sanpham sanpham, Integer soluong, Float tongtien, Float thanhtien) {
        this.donhang = donhang;
        this.sanpham = sanpham;
        this.soluong = soluong;
@@ -34,11 +32,11 @@ public class Chitiethd  implements java.io.Serializable {
        this.thanhtien = thanhtien;
     }
    
-    public int getMaCt() {
+    public Integer getMaCt() {
         return this.maCt;
     }
     
-    public void setMaCt(int maCt) {
+    public void setMaCt(Integer maCt) {
         this.maCt = maCt;
     }
     public Donhang getDonhang() {
