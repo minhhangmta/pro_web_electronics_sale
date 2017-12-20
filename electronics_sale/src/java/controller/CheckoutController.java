@@ -20,8 +20,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pojo.Chitiethd;
 import pojo.Donhang;
 import pojo.Item;
-import service.OrderDetailService;
+
 import service.OrderService;
+import service.OrderDetailService;
 
 /**
  *
@@ -34,15 +35,16 @@ import service.OrderService;
 public class CheckoutController {
 
     @Autowired
-    OrderService orderService;
+    private OrderService orderService;
+
+//    @Autowired
+//    OrderDetailService orderDetailService;
 
     // checkout đơn hàng
     @RequestMapping(value = "/checkout", method = RequestMethod.GET)
     public String checkout() {
         return "checkout";
     }
-//    @Autowired
-//    OrderDetailService orderDetailService;
 
     @RequestMapping(value = "/seveOrder", method = RequestMethod.POST)
     public String checkout(HttpSession session, ModelMap mm, HttpServletRequest request) {
@@ -61,24 +63,27 @@ public class CheckoutController {
         donhang.setKeydonhang(keydonhang);
         //donhang.setThanhtoan();
         this.orderService.saveOrder(donhang);
-        int i = this.orderService.getIdOrder(keydonhang);
-        //System.out.print(i);
-        if (i != -1) {
-            for (Item item : cart) {
-                Donhang dh = new Donhang();
-                dh.setMaHd(i);
-                Chitiethd ct = new Chitiethd();
-                ct.setSanpham(item.getSanpham());
-                ct.setSoluong(item.getQuantity());
-                ct.setDonhang(dh);
-                ct.setTongtien(item.getSanpham().getGia() * item.getQuantity());
-                ct.setThanhtien(item.getSanpham().getGia() * item.getQuantity() - item.getSanpham().getGia() * item.getQuantity() * item.getSanpham().getSale() / 100);
-                //this.orderDetailService.saveOrderDetailService(ct);
+        try {
+            int i = orderService.getIdOrder(keydonhang);
+            //System.out.print(i);
+            if (i != -1) {
+                for (Item item : cart) {
+                    Donhang dh = new Donhang();
+                    dh.setMaHd(i);
+                    Chitiethd ct = new Chitiethd();
+                    ct.setSanpham(item.getSanpham());
+                    ct.setSoluong(item.getQuantity());
+                    ct.setDonhang(dh);
+                    ct.setTongtien(item.getSanpham().getGia() * item.getQuantity());
+                    ct.setThanhtien(item.getSanpham().getGia() * item.getQuantity() - item.getSanpham().getGia() * item.getQuantity() * item.getSanpham().getSale() / 100);
+                    //  this.orderDetailService.saveOrderDetailService(ct);
+                }
             }
+            // remove cart
+            session.removeAttribute("cart");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        // remove cart
-        session.removeAttribute("cart");
-
         return "success-page";
     }
 }
