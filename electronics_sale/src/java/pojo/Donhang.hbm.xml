@@ -35,6 +35,9 @@
         <property name="thanhtoan" type="java.lang.Float">
             <column name="thanhtoan" precision="12" scale="0" />
         </property>
+        <property name="keydonhang" type="string">
+            <column name="keydonhang" length="100" />
+        </property>
         <set name="chitiethds" table="chitiethd" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="ma_dh" not-null="true" />

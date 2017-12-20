@@ -16,6 +16,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pojo.Khachhang;
 import pojo.Taikhoan;
 import service.AccountService;
 
@@ -39,7 +40,7 @@ public class LoginController {
 
     @RequestMapping(value = "/Login", method = RequestMethod.POST)
     public String login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("taikhoan") Taikhoan t, ModelMap mm) {
-        Taikhoan tk = accountService.login(t.getUsername(), t.getPassword());
+        Khachhang tk = accountService.login(t.getUsername(), t.getPassword());
         if (tk != null) {
             HttpSession session = request.getSession();
             session.setAttribute("account", tk);
@@ -65,16 +66,16 @@ public class LoginController {
 
     @RequestMapping(value = "/request", method = RequestMethod.POST)
     public String dangky(ModelMap mm, HttpServletRequest request) {
-        Taikhoan account = new Taikhoan();
+        Khachhang kh = new Khachhang();
         String passCf = request.getParameter("PasswordCf");
         if (passCf.equals(request.getParameter("Password"))) {
-            account.setHoten(request.getParameter("NameAccount"));
-            account.setEmail(request.getParameter("EmailAccount"));
-            account.setSodienthoai(request.getParameter("Telephone"));
-            account.setDiachi(request.getParameter("Address"));
-            account.setUsername(request.getParameter("Username"));
-            account.setPassword(request.getParameter("Password"));
-            int t = this.accountService.insertAccount(account);
+            kh.setHoten(request.getParameter("NameAccount"));
+            kh.setEmail(request.getParameter("EmailAccount"));
+            kh.setSodienthoai(request.getParameter("Telephone"));
+            kh.setDiachi(request.getParameter("Address"));
+            kh.setUsername(request.getParameter("Username"));
+            kh.setPassword(request.getParameter("Password"));
+            int t = this.accountService.insertAccount(kh);
             switch (t) {
                 case 1:
                     mm.put("taikhoan",new Taikhoan());

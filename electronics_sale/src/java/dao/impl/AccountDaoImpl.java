@@ -15,6 +15,7 @@ import pojo.Taikhoan;
 import util.HibernateUtil;
 import dao.AccountDao;
 import java.util.List;
+import pojo.Khachhang;
 
 /**
  *
@@ -24,15 +25,15 @@ import java.util.List;
 public class AccountDaoImpl implements AccountDao {
 
     @Override
-    public Taikhoan login(String userName, String passWord) {
+    public Khachhang login(String userName, String passWord) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("from Taikhoan where username=:username and password=:password");
+            Query query = session.createQuery("from Khachhang where username=:username and password=:password");
             query.setString("username", userName);
             query.setString("password", passWord);
-            Taikhoan tk = (Taikhoan) query.uniqueResult();
+            Khachhang tk = (Khachhang) query.uniqueResult();
             transaction.commit();
             return tk;
         } catch (Exception ex) {
@@ -55,12 +56,12 @@ public class AccountDaoImpl implements AccountDao {
 //    }
     // lay danh sach tai khoan
     @Override
-    public List<Taikhoan> getListAccount() {
+    public List<Khachhang> getListAccount() {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        ArrayList<Taikhoan> list = new ArrayList<>();
+        ArrayList<Khachhang> list = new ArrayList<>();
         try {
-            Query query = session.createQuery("from Taikhoan");
-            list = (ArrayList<Taikhoan>) query.list();
+            Query query = session.createQuery("from Khachhang");
+            list = (ArrayList<Khachhang>) query.list();
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -72,13 +73,13 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public int insertAccount(Taikhoan account) {
+    public int insertAccount(Khachhang khachhang) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            if (CheckAccount(account.getUsername()) == 0) {
-                session.save(account);
+            if (CheckAccount(khachhang.getUsername()) == 0) {
+                session.save(khachhang);
                 transaction.commit();
                 return 1;
             } else {                
@@ -98,7 +99,7 @@ public class AccountDaoImpl implements AccountDao {
 
     // check tai khoan
     public int CheckAccount(String username) {
-        List<Taikhoan> list = new AccountDaoImpl().getListAccount();
+        List<Khachhang> list = new AccountDaoImpl().getListAccount();
 
         int a = 0;
         for (int i = 0; i < list.size(); i++) {

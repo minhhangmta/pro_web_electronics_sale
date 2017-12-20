@@ -6,14 +6,13 @@
 package service;
 
 import java.util.List;
-import pojo.Taikhoan;
-
+import pojo.Khachhang;
 /**
  *
  * @author tranv
  */
 public interface AccountService {
-    public Taikhoan login(String userName, String passWord);
-    public List<Taikhoan> getListAccount();
-    public int insertAccount(Taikhoan account);
+    public Khachhang login(String userName, String passWord);
+    public List<Khachhang> getListAccount();
+    public int insertAccount(Khachhang khachhang);
 }

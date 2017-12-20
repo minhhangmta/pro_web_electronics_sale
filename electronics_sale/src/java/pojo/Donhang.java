@@ -22,18 +22,28 @@ public class Donhang  implements java.io.Serializable {
      private String diachi;
      private Float tongtien;
      private Float thanhtoan;
+     private String keydonhang;
+
+    public String getKeydonhang() {
+        return keydonhang;
+    }
+
+    public void setKeydonhang(String keydonhang) {
+        this.keydonhang = keydonhang;
+    }
      private Set chitiethds = new HashSet(0);
 
     public Donhang() {
     }
-    public Donhang( String hoten, Date ngaytao, String sodienthoai, String email, String diachi) {
+    public Donhang( String hoten, Date ngaytao, String sodienthoai, String email, String diachi,String keydonhang) {
        this.hoten = hoten;
        this.ngaytao = ngaytao;
        this.sodienthoai = sodienthoai;
        this.email = email;
        this.diachi = diachi;
+       this.keydonhang=keydonhang;
     }
-    public Donhang(Khachhang khachhang, Trangthai trangthai, String hoten, Date ngaytao, String sodienthoai, String email, String diachi, Float tongtien, Float thanhtoan, Set chitiethds) {
+    public Donhang(Khachhang khachhang, Trangthai trangthai, String hoten, Date ngaytao, String sodienthoai, String email, String diachi, Float tongtien, Float thanhtoan,String keydonhang, Set chitiethds) {
        this.khachhang = khachhang;
        this.trangthai = trangthai;
        this.hoten = hoten;
@@ -43,6 +53,7 @@ public class Donhang  implements java.io.Serializable {
        this.diachi = diachi;
        this.tongtien = tongtien;
        this.thanhtoan = thanhtoan;
+       this.keydonhang=keydonhang;
        this.chitiethds = chitiethds;
     }
    

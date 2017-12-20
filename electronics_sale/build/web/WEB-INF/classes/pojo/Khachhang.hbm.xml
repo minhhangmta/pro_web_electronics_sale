@@ -14,6 +14,9 @@
         <property name="email" type="string">
             <column name="email" length="50" />
         </property>
+        <property name="username" type="string">
+            <column name="username" length="50" />
+        </property>
         <property name="password" type="string">
             <column name="password" length="50" />
         </property>

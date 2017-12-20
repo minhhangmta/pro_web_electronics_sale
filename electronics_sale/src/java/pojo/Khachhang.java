@@ -14,6 +14,15 @@ public class Khachhang  implements java.io.Serializable {
      private Integer maKh;
      private String hoten;
      private String email;
+     private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
      private String password;
      private String sodienthoai;
      private String diachi;
@@ -21,10 +30,14 @@ public class Khachhang  implements java.io.Serializable {
 
     public Khachhang() {
     }
-
-    public Khachhang(String hoten, String email, String password, String sodienthoai, String diachi, Set donhangs) {
+    public Khachhang(String username, String password){
+        this.username=username;
+        this.password=password;
+    }
+    public Khachhang(String hoten, String email, String username,String password, String sodienthoai, String diachi, Set donhangs) {
        this.hoten = hoten;
        this.email = email;
+       this.username= username;
        this.password = password;
        this.sodienthoai = sodienthoai;
        this.diachi = diachi;

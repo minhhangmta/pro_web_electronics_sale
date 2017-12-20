@@ -13,5 +13,5 @@ import pojo.Donhang;
  */
 public interface OrderService {
     public boolean saveOrder(Donhang donhang);
-    public int getIdOrder(Donhang donhang);
+    public int getIdOrder(String keydonhang);
 }

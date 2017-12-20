@@ -28,8 +28,8 @@ public class OrderServiceImpl implements OrderService
     }
 
     @Override
-    public int getIdOrder(Donhang donhang) {
-        return orderDao.getIdOrder(donhang);
+    public int getIdOrder(String keydonhang) {
+        return orderDao.getIdOrder(keydonhang);
     }
 
     
